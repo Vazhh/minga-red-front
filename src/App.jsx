@@ -23,6 +23,9 @@ function App() {
 
 
       </div>
+      <footer>
+        
+      </footer>
 
 
       </div>
