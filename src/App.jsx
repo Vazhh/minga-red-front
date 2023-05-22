@@ -15,7 +15,7 @@ function App() {
         <img
           src={backgroundHome}
           alt=""
-          className="w-full h- sm:w-screen 2xl:w-screen"
+          className="w-screen"
         />
         <nav className="flex justify-between w-full absolute ps-3  pr-5 sm:mt-3 sm:ps-3 sm:pr-5 2xl:mt-8 2xl:ps-11 2xl:pr-11">
           <img src={menu} className="w-14" alt="" />
