@@ -53,14 +53,14 @@ function App() {
 
       {/* vista web */}
       
-        <div className="absolute hidden lg:inline-flex flex 2xl:mt-[1100px] h-[380px] bg-white w-full items-center justify-center">
+        <div className="absolute hidden lg:inline-flex flex lg:mt-[60%] h-[380px] bg-white w-full items-center justify-center">
           <div className="bg-purple flex  w-[90%] h-[265px] relative items-center rounded-md">
-            <div className="w-full flex justify-between p-8">
+            <div className="w-full flex justify-between p-3">
               <img src={left} alt="" />
               <img src={right} alt="" />
             </div>
 
-            <div className="text-white w-[25%] h-[93px] ms-[60%] absolute">
+            <div className="text-white w-[25%] h-[93px] ms-[65%] absolute">
               <h1 className="font-bold text-2xl font-roboto">Shonen:</h1>
               <p className="font-roboto text-sm">
                 Is the manga that is aimed at adolescent boys. They are series
@@ -70,7 +70,7 @@ function App() {
               </p>
             </div>
           </div>
-          <div className="absolute flex mb-12 mr-[45%]">
+          <div className="absolute flex mb-12 mr-[41%]">
             <img
               src={footer1}
               className="w-[276px] h-[306px] mr-[20%]"
