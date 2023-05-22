@@ -73,7 +73,7 @@ function App() {
           <div className="absolute flex mb-12 mr-[41%]">
             <img
               src={footer1}
-              className="w-[276px] h-[306px] mr-[20%]"
+              className="w-[276px] h-[306px] mr-[30%]"
               alt=""
             />
             <img src={footer2} className="w-[180px] h-[270px]" alt="" />
