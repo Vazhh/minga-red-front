@@ -51,7 +51,7 @@ function App() {
           </div>
 
 {/* vista web */}
-          <div className="absolute hidden lg:inline-flex flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
+          <div className="absolute hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
             <div className="bg-purple flex  w-[90%] h-[265px] relative items-center rounded-md">
               <div className="w-full flex justify-between p-3">
                 <img src={left} alt="" />
