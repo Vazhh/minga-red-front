@@ -22,7 +22,7 @@ function App() {
           <img src={logo} className="w-14  left-3 sm:w-14  2xl:w-24  " alt="" />
         </nav>
 
-        <main className="absolute w-screen">
+        <main className="absolute w-full">
           <div className="flex flex-col ms-5 mr-5 lg:mt-[30%]  mt-[60%] items-center">
             <h1 className="text-white flex font-roboto font-bold sm:text-4xl 2xl:text-5xl text-center">
               Your favorite comic book store{" "}
