@@ -48,11 +48,14 @@ function App() {
 
           {/* vista web */}
           <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
-            <div className="bg-purple flex  w-[90%] h-[265px] relative items-center justify-between rounded-md">
+            <div className="bg-purple flex w-[90%] h-[265px] items-center justify-between rounded-md">
               <img src={left} className="ps-3" alt="" />
+              <div className="flex mb-12 mr-8">
+              <img src={footer1} className="w-[276px] h-[306px] mr-16" alt="" />
+              <img src={footer2} className="w-[180px] h-[270px]" alt="" />
+              </div>
 
-              <img src={footer1} className="w-[276px] h-[306px] mb-12" alt="" />
-              <img src={footer2} className="w-[180px] h-[270px] mb-12" alt="" />
+              
 
               <div className="text-white w-[25%] h-[93px] flex flex-col justify-center">
                 <h1 className="font-bold text-2xl font-roboto">Shonen:</h1>
