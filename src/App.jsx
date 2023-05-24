@@ -12,11 +12,7 @@ function App() {
   return (
     <>
       <div className="flex flex-col relative items-center">
-        <img
-          src={backgroundHome}
-          alt=""
-          className="w-screen"
-        />
+        <img src={backgroundHome} alt="" className="w-screen" />
         <nav className="flex justify-between w-full absolute ps-3  pr-5 sm:mt-3 sm:ps-3 sm:pr-5 2xl:mt-8 2xl:ps-11 2xl:pr-11">
           <img src={menu} className="w-14" alt="" />
           <img src={logo} className="w-14  left-3 sm:w-14  2xl:w-24  " alt="" />
@@ -38,7 +34,7 @@ function App() {
             </p>
             <a
               href=""
-              className="mt-6 text-white lg:hidden bg-purple w-80 h-16 flex flex-col justify-center text-center rounded-full text-2xl font-bold"
+              className="mt-6 text-white lg:hidden bg-purple w-60 sm:w-80 h-16 flex flex-col justify-center text-center rounded-full text-2xl font-bold"
             >
               Started
             </a>
@@ -50,15 +46,15 @@ function App() {
             </a>
           </div>
 
-{/* vista web */}
-          <div className="absolute hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
-            <div className="bg-purple flex  w-[90%] h-[265px] relative items-center rounded-md">
-              <div className="w-full flex justify-between p-3">
-                <img src={left} alt="" />
-                <img src={right} alt="" />
-              </div>
+          {/* vista web */}
+          <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
+            <div className="bg-purple flex  w-[90%] h-[265px] relative items-center justify-between rounded-md">
+              <img src={left} className="ps-3" alt="" />
 
-              <div className="text-white w-[25%] h-[93px] ms-[65%] absolute">
+              <img src={footer1} className="w-[276px] h-[306px] mb-12" alt="" />
+              <img src={footer2} className="w-[180px] h-[270px] mb-12" alt="" />
+
+              <div className="text-white w-[25%] h-[93px] flex flex-col justify-center">
                 <h1 className="font-bold text-2xl font-roboto">Shonen:</h1>
                 <p className="font-roboto text-sm">
                   Is the manga that is aimed at adolescent boys. They are series
@@ -67,14 +63,7 @@ function App() {
                   or a combat team stands out.
                 </p>
               </div>
-            </div>
-            <div className="absolute flex mb-12 mr-[41%]">
-              <img
-                src={footer1}
-                className="w-[276px] h-[306px] mr-[30%]"
-                alt=""
-              />
-              <img src={footer2} className="w-[180px] h-[270px]" alt="" />
+              <img src={right} className="pr-3" alt="" />
             </div>
           </div>
         </main>
