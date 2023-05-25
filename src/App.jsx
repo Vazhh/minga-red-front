@@ -7,8 +7,14 @@ import footer2 from "./assets/vistaWeb/footer2.png";
 import left from "./assets/vistaWeb/left.svg";
 import right from "./assets/vistaWeb/right.svg";
 import star from "./assets/vistaWeb/star.png";
-import footer from "./assets/vistaWeb/footermain.png"
-import wave from "./assets/vistaWeb/wave.svg"
+import footer from "./assets/vistaWeb/footermain.png";
+import wave from "./assets/vistaWeb/wave.svg";
+import logofooter from "./assets/vistaWeb/logofooter.svg";
+import facebook from "./assets/vistaWeb/Facebook.svg"
+import twitter from "./assets/vistaWeb/Twitter.svg"
+import vimeo from "./assets/vistaWeb/Vimeo.svg"
+import youtube from "./assets/vistaWeb/Youtube.svg"
+import union from "./assets/vistaWeb/Union.svg"
 
 function App() {
   return (
@@ -53,11 +59,13 @@ function App() {
             <div className="bg-purple flex w-[90%] h-[265px] items-center justify-between rounded-md">
               <img src={left} className="ps-3" alt="" />
               <div className="flex mb-12 mr-8">
-              <img src={footer1} className="w-[276px] h-[306px] mr-16" alt="" />
-              <img src={footer2} className="w-[180px] h-[270px]" alt="" />
+                <img
+                  src={footer1}
+                  className="w-[276px] h-[306px] mr-16"
+                  alt=""
+                />
+                <img src={footer2} className="w-[180px] h-[270px]" alt="" />
               </div>
-
-              
 
               <div className="text-white w-[25%] h-[93px] flex flex-col justify-center">
                 <h1 className="font-bold text-2xl font-roboto">Shonen:</h1>
@@ -73,10 +81,32 @@ function App() {
           </div>
         </main>
 
-        <footer className="">
-          <div className="relative">
-          <img src={footer} className="w-screen " alt="" />
-          <img src={wave} alt="" className="absolute -mt-[13%]" />
+        <footer className="flex flex-col relative w-[100%] border-midnight border-[1px]">
+          <img src={footer} className="w-screen hidden  lg:inline" alt="" />
+          <img src={wave} alt="" className="absolute hidden lg:inline mt-[10%]" />
+          <div className="lg:mt-[7%] flex flex-col items-center justify-around p-[3%]">
+            <div className=" w-full  md:flex-row flex-col md:justify-around flex items-center">
+              <div className="flex p-3 md:p-0">
+                <p className="lg:text-2xl font-bold p-2 md:p-0 md:font-medium">Home</p>
+                <p className="md:ms-[50%] lg:text-2xl font-bold p-2 md:p-0 md:font-medium">Mangas</p>
+              </div>
+
+              <img src={logofooter} className="w-[40%] md:w-[20%] lg:w-[12%]" alt="" />
+
+              <div className=" mt-[3%] md:mt-[0] flex flex-col w-[60%] md:w-[20%] lg:w-[15%]">
+                <div className="flex justify-between">
+                  <img src={facebook} alt="" />
+                  <img src={twitter} alt="" />
+                  <img src={vimeo} alt="" />
+                  <img src={youtube} alt="" />
+                </div>
+                
+                  <a href="" className="bg-purple mt-[6px] md:mt-[22px] md:text-xl md:h-[43px] text-white w-full flex justify-center items-center rounded-full">Donate <img src={union} className="ms-[5%]" alt="" /></a>
+                
+              </div>
+              
+            </div>
+            <div className="bg-midnight hidden lg:inline-flex w-[85%] mb-[8%] h-[1px] mt-[3%] lg:w-[75%] justify-center items-center"></div>
           </div>
         </footer>
       </div>
