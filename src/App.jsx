@@ -7,6 +7,8 @@ import footer2 from "./assets/vistaWeb/footer2.png";
 import left from "./assets/vistaWeb/left.svg";
 import right from "./assets/vistaWeb/right.svg";
 import star from "./assets/vistaWeb/star.png";
+import footer from "./assets/vistaWeb/footermain.png"
+import wave from "./assets/vistaWeb/wave.svg"
 
 function App() {
   return (
@@ -71,8 +73,11 @@ function App() {
           </div>
         </main>
 
-        <footer>
-          <img src="" alt="" />
+        <footer className="">
+          <div className="relative">
+          <img src={footer} className="w-screen " alt="" />
+          <img src={wave} alt="" className="absolute -mt-[13%]" />
+          </div>
         </footer>
       </div>
     </>
