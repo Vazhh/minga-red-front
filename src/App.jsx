@@ -92,7 +92,7 @@ function App() {
             alt=""
             className="absolute hidden lg:inline mt-[10%]"
           />
-          <div className="lg:mt-[7%] flex flex-col items-center justify-around p-[1%] bg-white">
+          <div className="lg:mt-[7%] flex flex-col items-center justify-around p-[0.9%] bg-white">
             <div className=" w-full  md:flex-row flex-col md:justify-around flex items-center">
               <div className="flex p-2 md:p-0">
                 <p className="lg:text-2xl font-bold p-2 md:p-0 md:font-medium">
