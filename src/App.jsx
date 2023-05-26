@@ -111,6 +111,7 @@ function App() {
 
               <div className=" mt-[3%] md:mt-[0] flex flex-col w-[38%] md:w-[20%] lg:w-[15%] p-1">
                 <div className="flex justify-between p-1">
+
                   <img src={facebook} alt="" />
                   <img src={twitter} alt="" />
                   <img src={vimeo} alt="" />
@@ -124,6 +125,7 @@ function App() {
                   Donate <img src={union} className="ms-[5%]" alt="" />
                 </a>
               </div>
+
             </div>
             <div className="bg-midnight hidden lg:inline-flex w-[85%] mb-[8%] h-[1px] mt-[3%] lg:w-[75%] justify-center items-center"></div>
           </div>
