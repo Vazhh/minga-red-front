@@ -46,13 +46,13 @@ function App() {
             </p>
             <a
               href=""
-              className="mt-6 text-white lg:hidden bg-purple w-[30%] h-[30px] sm:w-80 sm:h-16 flex flex-col justify-center text-center rounded-full text-1xl sm:text-2xl font-bold"
+              className="mt-6 text-white lg:hidden bg-gradient-to-r from-indigo-700 to-indigo-500 w-[30%] h-[30px] sm:w-80 sm:h-16 flex flex-col justify-center text-center rounded-full text-1xl sm:text-2xl font-bold"
             >
               Started
             </a>
             <a
               href=""
-              className="mt-6 hidden lg:inline-flex text-white bg-purple w-80 h-16 flex-col justify-center text-center rounded-md text-2xl font-bold"
+              className="mt-6 hidden lg:inline-flex text-white bg-gradient-to-r from-indigo-700 to-indigo-500 w-80 h-16 flex-col justify-center text-center rounded-md text-2xl font-bold"
             >
               Let's go!
             </a>
@@ -60,7 +60,7 @@ function App() {
 
           {/* vista web */}
           <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
-            <div className="bg-purple flex w-[90%] h-[265px] items-center justify-between rounded-md">
+            <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 flex w-[90%] h-[265px] items-center justify-between rounded-md">
               <img src={left} className="ps-3" alt="" />
               <div className="flex mb-12 mr-8">
                 <img
@@ -85,7 +85,7 @@ function App() {
           </div>
         </main>
 
-        <footer className="flex flex-col lg:relative self-end w-[100%]">
+        <footer className="flex flex-col lg:relative w-[100%]">
           <img src={footer} className="w-screen hidden  lg:inline" alt="" />
           <img
             src={wave}
@@ -120,14 +120,14 @@ function App() {
 
                 <a
                   href=""
-                  className="bg-purple mt-[6%] md:mt-[22px] md:text-xl md:h-[43px] text-white w-full flex justify-center items-center rounded-full"
+                  className="bg-gradient-to-r from-indigo-700 to-indigo-500 mt-[6%] md:mt-[22px] md:text-xl md:h-[43px] text-white w-full flex justify-center items-center rounded-full"
                 >
                   Donate <img src={union} className="ms-[5%]" alt="" />
                 </a>
               </div>
 
             </div>
-            <div className="bg-midnight hidden lg:inline-flex w-[85%] mb-[8%] h-[1px] mt-[3%] lg:w-[75%] justify-center items-center"></div>
+            <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 hidden lg:inline-flex w-[85%] mb-[8%] h-[1px] mt-[3%] lg:w-[75%] justify-center items-center"></div>
           </div>
         </footer>
       </div>
