@@ -1,6 +1,6 @@
 import backgroundHome from "/assets/vistaMobile/fondo.png";
 import Main from "./layouts/Main";
-import Index from "./componets/Index";
+import Index from "./pages/Index";
 
 function App() {
   let data = [

@@ -1,5 +1,5 @@
-import Carousel from "./Carousel"
-import TextBodyMain from "./TextBodyMain"
+import Carousel from "../componets/Carousel"
+import TextBodyMain from "../componets/TextBodyMain"
 
 export default function Index({data}) {
   return (
