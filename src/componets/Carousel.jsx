@@ -32,7 +32,7 @@ export default function Carousel() {
     <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
       <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 flex w-[90%] h-[265px] items-center justify-between rounded-md">
         <img src={left} onClick={prev} className="ps-3" alt="" />
-        <div className="flex mb-12 mr-8">
+        <div className="flex mb-[41px] mr-8">
           <img
             src={categories[counter]?.character_photo}
             className="w-[276px] h-[306px] mr-16"

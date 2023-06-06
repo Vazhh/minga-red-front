@@ -11,7 +11,7 @@ export default function Display({options,show,setShow}) {
                 <p className='font-inter text-[15px]'>Robinson Gerardo Aguirre Duque</p>
                 <p className='font-inter text-[12px]'>xerarduDev@gmail.com</p>
             </div>
-            <h1 onClick={()=>setShow(!show)} className='w-[14px] h-[14px]'>X</h1>
+            <h1 onClick={()=>setShow(!show)} className='w-[14px] h-[14px] hover:cursor-pointer'>X</h1>
         </div>
         <div className='items-center ms-7 mt-5'>
         <li className='rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold'><a href="">Home</a></li>
