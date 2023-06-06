@@ -3,7 +3,7 @@ import TextBodyMain from "../componets/TextBodyMain"
 
 export default function Index({data}) {
   return (
-    <main className="lg:relative absolute w-full sm:-mt-[10%] -mt-[8%]  lg:mt-0">
+    <main className="lg:relative absolute w-full ">
           <TextBodyMain />
           <Carousel
             character_photo={data[0].character_photo}
