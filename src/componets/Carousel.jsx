@@ -16,12 +16,16 @@ export default function Carousel() {
   )
   const [counter, setCounter] = useState(0);
   const next = () => {
+    if(counter<categories.length-1){
     setCounter(counter + 1);
     console.log(counter);
+  }
   };
   const prev = () => {
+    if(counter>0){
     setCounter(counter - 1);
     console.log(counter);
+  }
   };
   console.log(categories);
   return (
