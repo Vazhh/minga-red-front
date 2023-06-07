@@ -34,9 +34,10 @@ export default function Carousel() {
     }
   };
   console.log(categories);
+  
   return (
-    <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
-      <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 flex w-[90%] h-[265px] items-center justify-between rounded-md">
+    <div className="hidden md:inline-flex md:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
+      <div className="flex w-[90%] h-[265px] items-center justify-between rounded-md " style={{backgroundColor:categories[counter]?.hover}}>
         <img
           src={left}
           onClick={prev}
@@ -46,7 +47,7 @@ export default function Carousel() {
         <div className="flex mb-[41px] mr-8">
           <img
             src={categories[counter]?.character_photo}
-            className="w-[276px] h-[306px] mr-16"
+            className="w-[276px] h-[306px] mr-1"
             alt=""
           />
           <img
@@ -57,10 +58,10 @@ export default function Carousel() {
         </div>
 
         <div className="text-white w-[25%] h-[93px] flex flex-col justify-center">
-          <h1 className="font-bold text-2xl font-roboto">
+          <h1 className="font-bold text-2xl font-roboto" style={{color:categories[counter]?.color}}>
             {categories[counter]?.name.toUpperCase()}
           </h1>
-          <p className="font-roboto text-sm">
+          <p className="font-roboto text-sm" style={{color:categories[counter]?.color}}>
             {categories[counter]?.description}
           </p>
           <p>{counter}</p>
