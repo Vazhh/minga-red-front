@@ -18,7 +18,7 @@ function App() {
         <img
           src={backgroundHome}
           alt=""
-          className="lg:absolute w-full lg:h-[100%] lg:object-cover lg:object-top"
+          className="md:absolute w-full md:h-[100%] md:object-cover md:object-top"
         />
         <Main>
           <Index data={data} />

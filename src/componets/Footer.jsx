@@ -9,20 +9,20 @@ import union from "/assets/vistaWeb/Union.svg";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col lg:relative w-[100%]">
-          <img src={footer} className="w-screen hidden  lg:inline" alt="" />
+    <footer className="flex flex-col md:relative w-[100%]">
+          <img src={footer} className="w-screen hidden  md:inline" alt="" />
           <img
             src={wave}
             alt=""
-            className="absolute hidden lg:inline mt-[10%]"
+            className="absolute hidden md:inline mt-[10%]"
           />
-          <div className="lg:mt-[7%] flex flex-col items-center justify-around p-[1%] bg-white">
+          <div className="md:mt-[7%] flex flex-col items-center justify-around p-[1%] bg-white">
             <div className="p-1 w-full  md:flex-row flex-col md:justify-around flex items-center">
               <div className="flex p-2 md:p-0">
-                <p className="lg:text-2xl font-bold p-2 md:p-0 md:font-medium">
+                <p className="md:text-2xl font-bold p-2 md:p-0 md:font-medium">
                   Home
                 </p>
-                <p className="md:ms-[50%] lg:text-2xl font-bold p-2 md:p-0 md:font-medium">
+                <p className="md:ms-[50%] md:text-2xl font-bold p-2 md:p-0 md:font-medium">
                   Mangas
                 </p>
               </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                 alt=""
               />
 
-              <div className=" mt-[3%] md:mt-[0] flex flex-col w-[38%] md:w-[20%] lg:w-[15%] p-1">
+              <div className=" mt-[3%] md:mt-[0] flex flex-col w-[38%] md:w-[20%] md:w-[15%] p-1">
                 <div className="flex justify-between p-1">
 
                   <img src={facebook} alt="" />
