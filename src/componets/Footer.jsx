@@ -9,7 +9,7 @@ import union from "/assets/vistaWeb/Union.svg";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col md:relative w-[100%]">
+    <footer className="flex flex-col md:relative w-[100%] pb-[5% md:pb-0">
           <img src={footer} className="w-screen hidden  md:inline" alt="" />
           <img
             src={wave}
