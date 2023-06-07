@@ -14,7 +14,7 @@ function App() {
   ];
   return (
     <>
-      <div className="flex flex-col relative items-center">
+      <div className="flex flex-col relative items-center ">
         <img
           src={backgroundHome}
           alt=""
