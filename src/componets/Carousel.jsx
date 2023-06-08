@@ -17,6 +17,8 @@ export default function Carousel() {
     [] //si el array esta vacio el efecto se ejecuta por primera y unica vez cuando el componente se monta, si el array tienes alguna/s varible el efecto se va a ejecutar cada vez que se modifique el valor de esos parametros
   );
   const [counter, setCounter] = useState(0);
+  const [mousedOver, setMousedOver] = useState(false);
+
   const next = () => {
     if (counter == categories.length-1) {
       setCounter(0);
@@ -34,9 +36,18 @@ export default function Carousel() {
     }
   };
   console.log(categories);
+  useEffect(() => {
+    if (mousedOver) {
+      const timer = setInterval(() => {
+        setCounter((prevCount) => (prevCount + 1) % categories.length);
+      }, 4000);
+      return () => clearInterval(timer);
+    } 
+  }, [mousedOver]);
   
   return (
-    <div className="hidden md:inline-flex md:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
+    <div onMouseOver={() => setMousedOver(true)}
+    onMouseOut={() => setMousedOver(false)} className="hidden md:inline-flex md:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
       <div className="flex w-[90%] h-[265px] items-center justify-between rounded-md " style={{backgroundColor:categories[counter]?.hover}}>
         <img
           src={left}
@@ -67,7 +78,7 @@ export default function Carousel() {
           <p>{counter}</p>
         </div>
         <img
-          src={right}
+          src={right} 
           onClick={next}
           className="pr-3 hover:cursor-pointer"
           alt=""

@@ -1,4 +1,3 @@
-import backgroundHome from "/assets/vistaMobile/fondo.png";
 import Main from "./layouts/Main";
 import Index from "./pages/Index";
 
@@ -14,12 +13,7 @@ function App() {
   ];
   return (
     <>
-      <div className="flex flex-col items-center ">
-        {/* <img
-          src={backgroundHome}
-          alt=""
-          className="md:absolute w-full md:h-[100%] md:object-cover md:object-top"
-        /> */}
+      <div className="flex flex-col  items-center bg-[url('/assets/vistaMobile/fondo.png')] bg-cover bg-top">
         <Main>
           <Index data={data} />
         </Main>
