@@ -33,7 +33,7 @@ export default function Footer() {
                 alt=""
               />
 
-              <div className=" mt-[3%] md:mt-[0] flex flex-col w-[38%] md:w-[20%] md:w-[15%] p-1">
+              <div className=" mt-[3%] md:mt-[0] flex flex-col w-[38%] lg:w-[15%] md:w-[20%] p-1">
                 <div className="flex justify-between p-1">
 
                   <img src={facebook} alt="" />

@@ -2,7 +2,7 @@ import star from "/assets/vistaWeb/star.png";
 
 export default function TextBodyMain({ changeView, setChangeView }) {
   return (
-    <div className="flex flex-col ms-5 mr-5 md:mt-[30%]  mt-[60%] items-center">
+    <div className="flex flex-col ms-5 mr-5 md:mt-[30%] mt-[60%] items-center">
       <h1 className="text-white flex font-roboto font-bold sm:text-4xl 2xl:text-5xl text-center">
         Your favorite comic book store{" "}
         <img className="hidden md:inline w-8 h-8" src={star} alt="" />

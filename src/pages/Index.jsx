@@ -10,7 +10,7 @@ export default function Index({ data }) {
       changeView ? (
         <SignIn changeView={changeView} setChangeView={setChangeView}/>
       ) : (
-        <main className="md:relative absolute w-full justify-center items-center">
+        <main className="md:relative w-full h-screen md:h-full justify-center items-center">
           <TextBodyMain changeView={changeView} setChangeView={setChangeView}/>
           <Carousel
             character_photo={data[0].character_photo}

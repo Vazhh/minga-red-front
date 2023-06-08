@@ -3,14 +3,14 @@ import signin from "/assets/vistaWeb/singin.png";
 export default function SignIn({ changeView, setChangeView }) {
   return (
     <>
-      <main className="md:relative absolute bg-white flex flex-col  items-center w-full">
+      <main className="md:relative bg-white flex flex-col  items-center w-full">
         <div className="flex w-full">
           <img
             src={signin}
             className="hidden md:flex  object-cover w-[50vw]"
             alt=""
           />
-          <div className="flex flex-col md:w-[50vw] w-full pt-[45%] pb-[40%] md:pb-[1%] items-center md:pt-[5%] lg:pt-[15%]">
+          <div className="flex flex-col md:w-[50vw] w-full pt-[15%] pb-[40%] md:pb-[10%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[15%]">
             <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
             <p className="font-semibold text-[32px]">
               Welcome <span className="text-[#4338CA]">back</span>!

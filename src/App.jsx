@@ -14,12 +14,12 @@ function App() {
   ];
   return (
     <>
-      <div className="flex flex-col relative items-center ">
-        <img
+      <div className="flex flex-col items-center bg-[url('/assets/vistaMobile/fondo.png')] bg-cover bg-top">
+        {/* <img
           src={backgroundHome}
           alt=""
           className="md:absolute w-full md:h-[100%] md:object-cover md:object-top"
-        />
+        /> */}
         <Main>
           <Index data={data} />
         </Main>
