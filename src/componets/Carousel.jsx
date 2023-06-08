@@ -75,7 +75,7 @@ export default function Carousel() {
           <p className="font-roboto text-sm" style={{color:categories[counter]?.color}}>
             {categories[counter]?.description}
           </p>
-          <p>{counter}</p>
+          {/* <p>{counter}</p> */}
         </div>
         <img
           src={right} 
