@@ -1,6 +1,8 @@
 import logo from "/assets/vistaWeb/logofooter.svg";
 import signin from "/assets/vistaWeb/singin.png";
-export default function SignIn({ changeView, setChangeView }) {
+import { Link as Anchor } from "react-router-dom";
+
+export default function SignIn() {
   return (
     <>
       <main className="md:relative items-center w-full">
@@ -10,7 +12,7 @@ export default function SignIn({ changeView, setChangeView }) {
             className="hidden md:flex  object-cover w-[50vw]"
             alt=""
           />
-          <div className=" bg-white flex flex-col md:w-[50vw] w-full pt-[15%] pb-[40%] md:pb-[10%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[15%]">
+          <div className=" bg-white flex flex-col md:w-[50vw] w-full pt-[15%] pb-[0] md:pb-[5%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[10%]">
             <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
             <p className="font-semibold text-[32px]">
               Welcome <span className="text-[#4338CA]">back</span>!
@@ -43,18 +45,17 @@ export default function SignIn({ changeView, setChangeView }) {
             </form>
             <p className="mt-[16px] font-roboto font-medium text-[14px]">
               you don't have an account yet?{" "}
-              <span className="text-[#4338CA]">Sign up</span>
+              <Anchor to={'/register'} className="text-[#4338CA]">Sign up</Anchor>
             </p>
             <p className="mt-[17px] font-roboto font-medium text-[14px]">
               Go back to{" "}
-              <span
+              <Anchor
+              to={'/'}
                 className="text-[#4338CA] hover:cursor-pointer"
-                onClick={() => {
-                  setChangeView(!changeView);
-                }}
+            
               >
                 home page
-              </span>
+              </Anchor>
             </p>
           </div>
         </div>

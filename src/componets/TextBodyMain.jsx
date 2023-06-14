@@ -1,4 +1,5 @@
 import star from "/assets/vistaWeb/star.png";
+import { Link as Anchor } from "react-router-dom";
 
 export default function TextBodyMain({ changeView, setChangeView }) {
   return (
@@ -15,21 +16,17 @@ export default function TextBodyMain({ changeView, setChangeView }) {
       <p className="text-center hidden md:inline ps-1 pr-1 mt-6 text-white font-roboto text-base">
         Explore our catalog to live the adventure of your life.
       </p>
-      <button
-        onClick={() => {
-          setChangeView(!changeView);
-        }}
+      <Anchor
+        to={'/'}
         className="mt-6 text-white md:hidden bg-gradient-to-r from-indigo-700 to-indigo-500 w-[30%] h-[30px] sm:w-80 sm:h-16 flex flex-col justify-center items-center rounded-full text-1xl sm:text-2xl font-bold"
       >
         Started
-      </button>
-      <button onClick={() => {
-          setChangeView(!changeView);
-        }}
+      </Anchor>
+      <Anchor to={'/signin'}
         className="mt-6 hidden md:inline-flex text-white bg-gradient-to-r from-indigo-700 to-indigo-500 w-80 h-16 flex-col justify-center items-center rounded-md text-2xl font-bold"
       >
         Let's go!
-      </button>
+      </Anchor>
     </div>
   );
 }

@@ -2,12 +2,13 @@ import menu from "/assets/vistaWeb/Menu.svg";
 import logo from "/assets/vistaWeb/Logo.svg";
 import Display from "./Display"
 import { useState } from "react";
+import { Link as Anchor } from "react-router-dom";
 
 export default function NavBar() {
   let options = [
-    {tittle: 'Home'},
-    {tittle: 'Register'},
-    {tittle: 'Sign In'}
+    {to:'/',title: 'Home'},
+    {to:'/register',title: 'Register'},
+    {to:'/signin',title: 'Sign In'}
   ]
   const [show,setShow] = useState(false)
   return (
