@@ -1,5 +1,6 @@
 import React from "react";
 import login from "/assets/vistaWeb/login.jpg";
+import { Link as Anchor } from "react-router-dom";
 
 export default function Display({ options, show, setShow }) {
   return (
@@ -26,22 +27,9 @@ export default function Display({ options, show, setShow }) {
             X
           </h1>
         </div>
-        <div className="items-center ps-[24px] mt-5 pr-[24px]">
-          <li className="rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">
-            <a href="">Home</a>
-          </li>
-          <li className="rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">
-            <a href="">Mangas</a>
-          </li>
-          <li className="rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">
-            <a href="">My Mangas</a>
-          </li>
-          <li className="rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">
-            <a href="">Favorites</a>
-          </li>
-          <li className="rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">
-            <a href="">Logout</a>
-          </li>
+        <div className="flex flex-col ps-[24px] mt-5 pr-[24px] w-full">
+        {options?.map((each,index)=> <Anchor key={index} to={each.to} className=" rounded-[8px] p-2 list-none h-[48px] hover:bg-white hover:text-indigo-700 hover:font-bold">{each.title}</Anchor> )}
+          
         </div>
       </div>
     </div>

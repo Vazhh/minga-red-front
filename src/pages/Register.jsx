@@ -1,11 +1,12 @@
 import logo from "/assets/vistaWeb/logofooter.svg";
 import register from "/assets/vistaWeb/register.png";
+import { Link as Anchor } from "react-router-dom";
 
-export default function Register({ changeView, setChangeView }) {
+export default function Register() {
   return (
     <main className="md:relative bg-white flex flex-col  items-center w-full">
       <div className="flex w-full">
-        <div className="flex flex-col md:w-[50vw] w-full pt-[15%] pb-[40%] md:pb-[10%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[15%]">
+        <div className="flex flex-col md:w-[50vw] w-full pt-[15%] pb-[0%] md:pb-[0%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[8%]">
           <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
           <p className="font-semibold text-[32px]">
             Welcome <span className="text-[#4338CA]">back</span>!
@@ -46,18 +47,16 @@ export default function Register({ changeView, setChangeView }) {
           </form>
           <p className="mt-[16px] font-roboto font-medium text-[14px]">
             Already have an account?{" "}
-            <span className="text-[#4338CA]">Log in</span>
+            <Anchor to={'/signin'} className="text-[#4338CA]">Log in</Anchor>
           </p>
           <p className="mt-[17px] font-roboto font-medium text-[14px]">
             Go back to{" "}
-            <span
+            <Anchor
               className="text-[#4338CA] hover:cursor-pointer"
-              onClick={() => {
-                setChangeView(!changeView);
-              }}
+              to={'/'}
             >
               home page
-            </span>
+            </Anchor>
           </p>
         </div>
         <img
