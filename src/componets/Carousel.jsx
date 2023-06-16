@@ -55,10 +55,10 @@ export default function Carousel() {
           className="ps-3 hover:cursor-pointer"
           alt=""
         />
-        <div className="flex mb-[41px] mr-8">
+        <div className="flex mb-[41px] mr-[12%]">
           <img
             src={categories[counter]?.character_photo}
-            className="w-[276px] h-[306px] mr-1"
+            className="w-[276px] h-[306px] "
             alt=""
           />
           <img
