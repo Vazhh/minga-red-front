@@ -1,14 +1,30 @@
 import logo from "/assets/vistaWeb/logofooter.svg";
-import signin from "/assets/vistaWeb/singin.png";
-import { Link as Anchor } from "react-router-dom";
+import imgsignin from "/assets/vistaWeb/singin.png";
+import { Link as Anchor, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export default function SignIn() {
+  const navigate = useNavigate();
+  const signin = () => {
+    //deberia hacer una peticion al backend para iniciar secion y si todo esta bien: iniciar secion y redirigir a home.
+    // axios.post(url).then(()=>navigate('/')).catch(err=>console.log(err))
+    console.log(email) // la referencia siempre devuelve un objeto con una unica propiedad CURRENT
+    console.log(email.current.value,password.current.value) //leyendo o llamando una referencia
+    let data ={
+      email: email.current.value,
+      password: password.current.value
+    }
+    setTimeout(() => navigate("/"), 5000);
+  };
+  const email = useRef(); //defino una referencia
+  const password = useRef();
+
   return (
     <>
       <main className="md:relative items-center w-full">
         <div className="flex w-full">
           <img
-            src={signin}
+            src={imgsignin}
             className="hidden md:flex  object-cover w-[50vw]"
             alt=""
           />
@@ -23,16 +39,19 @@ export default function SignIn() {
             </p>
             <form className="flex flex-col w-full items-center mt-[59px]">
               <input
+                ref={email} //asigno una referencia
                 type="email"
                 placeholder="Email"
                 className="border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
               />
               <input
+                ref={password}
                 type="password"
                 placeholder="Password"
                 className="mt-[32px] border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
               />
               <input
+                onClick={signin}
                 type="button"
                 value="Sign In"
                 className="mt-[13px] w-[50%] h-[48px] bg-[#4338CA] rounded-[10px] font-roboto font-bold text-[14px] text-white"
@@ -45,15 +64,13 @@ export default function SignIn() {
             </form>
             <p className="mt-[16px] font-roboto font-medium text-[14px]">
               you don't have an account yet?{" "}
-              <Anchor to={'/register'} className="text-[#4338CA]">Sign up</Anchor>
+              <Anchor to={"/register"} className="text-[#4338CA]">
+                Sign up
+              </Anchor>
             </p>
             <p className="mt-[17px] font-roboto font-medium text-[14px]">
               Go back to{" "}
-              <Anchor
-              to={'/'}
-                className="text-[#4338CA] hover:cursor-pointer"
-            
-              >
+              <Anchor to={"/"} className="text-[#4338CA] hover:cursor-pointer">
                 home page
               </Anchor>
             </p>
