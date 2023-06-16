@@ -19,18 +19,21 @@ export default function Mangaform() {
   console.log(categories);
   const navigate = useNavigate();
   const manga = () => {
-    console.log(title);
-    console.log(category);
-    console.log(description);
-    console.log(photo);
+    //console.log(title);
+    //console.log(category);
+    //console.log(description);
+    //console.log(photo);
+    let selectedCategory = categories.find(
+      (each) => each.name === category.current.value
+    );
     let data = {
       title: title.current.value,
-      category_id: category.current.value,
+      category_id: selectedCategory._id,
       description: description.current.value,
       cover_photo: photo.current.value,
     };
     setTimeout(() => navigate("/"), 2000);
-    console.log(data)
+    console.log(data);
   };
   const title = useRef();
   const category = useRef();
@@ -54,7 +57,9 @@ export default function Mangaform() {
             Insert category
           </option>
           {categories?.map((category, i) => (
-            <option key={i}>{category?.name}</option>
+            <option key={i} id={category?._id}>
+              {category?.name}
+            </option>
           ))}
         </select>
         <input
