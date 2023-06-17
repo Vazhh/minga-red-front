@@ -21,14 +21,14 @@ export default function SignIn() {
 
   return (
     <>
-      <main className="md:relative items-center w-full">
+      <main className="md:relative items-center w-full h-screen">
         <div className="flex w-full">
           <img
             src={imgsignin}
-            className="hidden md:flex  object-cover w-[50vw]"
+            className="hidden md:flex  object-cover w-[50vw] h-screen"
             alt=""
           />
-          <div className=" bg-white flex flex-col md:w-[50vw] w-full pt-[15%] pb-[0] md:pb-[5%] items-center md:pt-[5%] lg:pt-[8%] xl:pt-[10%]">
+          <div className=" bg-white flex flex-col md:w-[50vw] w-full pt-[19%] pb-[0] items-center md:pt-[14%] lg:pt-[10%] xl:pt-[10%]">
             <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
             <p className="font-semibold text-[32px]">
               Welcome <span className="text-[#4338CA]">back</span>!
