@@ -1,33 +1,29 @@
 import profilePhoto from "/assets/vistaWeb/profilePhoto.png";
-import { Link as Anchor, useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import axios from "axios";
+
 
 export default function AuthorForm() {
 
   const authorCreate = ()=>{
     console.log(name)
     console.log(last_name)
-    console.log(city)
-    console.log(country)
+    console.log(location)
     console.log(date)
     console.log(photo)
 
     let data = {
       name: name.current.value,
       last_name: last_name.current.value,
-      city: city.current.value,
-      country: country.current.value,
+      city: location.current.value.split(',')[0],
+      country: location.current.value.split(',')[1],
       date: date.current.value,
       photo: photo.current.value,
-    };
+    };console.log(data)
   };
   
   const name = useRef();
   const last_name = useRef();
-  const city = useRef();
-  const country = useRef();
- /*  const arrayCityPlace =place,split('city,country'); console.log(place) */
+  const location = useRef();
   const date = useRef();
   const photo = useRef();
   return (
@@ -54,14 +50,13 @@ export default function AuthorForm() {
           />
           <input
             type="text"
-            ref={city,country}
+            ref={location}
             placeholder="City,Country"
             className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
           />
           <input
             type="date"
-            ref={Date}
-            value=""
+            ref={date}
             className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
           />
           <input
