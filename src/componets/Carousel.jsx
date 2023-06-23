@@ -36,14 +36,14 @@ export default function Carousel() {
     }
   };
   console.log(categories);
-  // useEffect(() => {
-  //   if (mousedOver) {
-  //     const timer = setInterval(() => {
-  //       setCounter((prevCount) => (prevCount + 1) % categories.length);
-  //     }, 4000);
-  //     return () => clearInterval(timer);
-  //   } 
-  // }, [mousedOver]);
+  useEffect(() => {
+    if (mousedOver) {
+      const timer = setInterval(() => {
+        setCounter((prevCount) => (prevCount + 1) % categories.length);
+      }, 4000);
+      return () => clearInterval(timer);
+    } 
+  }, [mousedOver]);
   
   return (
     <div onMouseOver={() => setMousedOver(true)}
