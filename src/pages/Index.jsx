@@ -2,6 +2,7 @@ import { useState } from "react";
 import Carousel from "../componets/Carousel";
 import TextBodyMain from "../componets/TextBodyMain";
 import { useParams } from "react-router-dom";
+import fondo from "/assets/vistaMobile/fondo.png"
 
 
 
@@ -12,10 +13,12 @@ export default function Index() {
   console.log(author_id)
   return (
       
-        <main className="md:relative w-full h-screen md:h-full justify-center items-center bg-[url('/assets/vistaMobile/fondo.png')] bg-cover bg-top">
+        <main className="w-full h-screen md:h-full justify-center items-center bg-[url('/assets/vistaMobile/fondo.png')] bg-cover bg-top">
+          {/* <img src={fondo} alt="" /> */}
           <TextBodyMain/>
           <Carousel/>
           </main>
+          
       
     
   );

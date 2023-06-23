@@ -4,7 +4,7 @@ import { Link as Anchor } from "react-router-dom";
 
 export default function Display({ options, show, setShow }) {
   return (
-    <div className="items-center w-full text-white md:w-[420px] p-2 rounded-xl absolute z-20 top-0 left-0 bg-indigo-700 flex flex-col h-full">
+    <div className="absolute flex flex-col md:fixed w-full h-full items-center text-white md:w-[420px] p-2 rounded-xl z-20 top-0 left-0 bg-indigo-700 ">
       <div className="w-[100%]">
         <div className="ps-[24px] pr-[29px] mt-[10%] flex justify-around">
           <div className="flex w-full">
