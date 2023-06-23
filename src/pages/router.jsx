@@ -5,6 +5,8 @@ import SignIn from "./SignIn";
 import Register from "./Register";
 import MangaForm from "./MangaForm";
 import AuthorForm from "./AuthorForm";
+import CiaForm from "./CiaForm";
+
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -18,6 +20,7 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/manga-form", element: <MangaForm /> },
       { path: "/author-form", element: <AuthorForm /> },
+      { path: "/cia-form", element: <CiaForm />},
     ],
   },
 ]);

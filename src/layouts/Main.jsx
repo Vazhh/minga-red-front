@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom"
 
 export default function Main() {
   return (
-    <div className="flex flex-col h-full w-full items-center">
+    <div className="flex flex-col h-full w-full items-center relative">
     <NavBar/>
     {/*vistas dinamicas(por ahora solo index)*/}
     <Outlet />

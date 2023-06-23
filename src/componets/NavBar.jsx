@@ -10,7 +10,8 @@ export default function NavBar() {
     { to: "/register", title: "Register" },
     { to: "/signin", title: "Sign In" },
     { to: "/manga-form", title: "Create Manga" },
-    { to: "/author-form", title: "Create Author" },
+    { to: "/author-form", title: "Create Author"},
+    { to: "/cia-form", title: "Create company"},
   ];
   const [show, setShow] = useState(false);
   return (
