@@ -3,7 +3,7 @@ import { Link as Anchor } from "react-router-dom";
 
 export default function TextBodyMain({ changeView, setChangeView }) {
   return (
-    <div className="flex flex-col ms-5 mr-5 md:mt-[27.5%] lg:mt-[28%] xl:mt-[28.4%] 2xl:mt-[28.5%] mt-[60%] items-center">
+    <div className="flex flex-col ms-5 mr-5 md:mt-[14.9%] mt-[60%] items-center">
       <h1 className="text-white flex font-roboto font-bold sm:text-4xl md:text-[32px] lg:text-[42px] xl:text-[50px] 2xl:text-[65px] text-center">
         Your favorite comic book store{" "}
         <img className="hidden md:inline w-8 h-8" src={star} alt="" />
@@ -13,7 +13,7 @@ export default function TextBodyMain({ changeView, setChangeView }) {
         yourself in your favorite universes. Explore our catalog and live the
         adventure of your life.
       </p>
-      <p className="text-center hidden md:inline ps-1 pr-1 md:mt-[0.9%] lg:mt-[1.4%] xl:mt-[1.5%] 2xl:mt-[2%] text-white font-roboto md:text-[15px] lg:text-[20px] xl:text-[23px] 2xl:text-[30px] md:w-[35%] lg:w-[38%] 2xl:w-[34.8%]">
+      <p className="text-center hidden md:inline ps-1 pr-1 md:mt-[0.9%] lg:mt-[1.4%] xl:mt-[1.5%] 2xl:mt-[2%] text-white font-roboto md:text-[15px] lg:text-[20px] xl:text-[23px] 2xl:text-[30px] md:w-[35%] lg:w-[38%] xl:w-[35%] 2xl:w-[34.8%]">
         Explore our catalog to live the adventure of your life.
       </p>
       <Anchor

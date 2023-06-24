@@ -13,7 +13,7 @@ export default function Index() {
   console.log(author_id)
   return (
       
-        <main className="w-full h-screen md:h-full justify-center items-center bg-[url('/assets/vistaMobile/fondo.png')] bg-cover bg-top">
+        <main className="w-full h-screen md:h-full justify-center items-center bg-[url('/assets/vistaMobile/fondo.png')] md:bg-[url('/assets/vistaWeb/fondoRecortado.png')] md:bg-contain md:bg-no-repeat bg-top bg-cover">
           {/* <img src={fondo} alt="" /> */}
           <TextBodyMain/>
           <Carousel/>
