@@ -24,7 +24,7 @@ export default function Carousel() {
       setCounter(0);
     } else {
       setCounter(counter + 1);
-      console.log(counter);
+      //console.log(counter);
     }
   };
   const prev = () => {
@@ -32,10 +32,10 @@ export default function Carousel() {
       setCounter(categories.length-1)
     }else{
       setCounter(counter - 1);
-      console.log(counter);
+      //console.log(counter);
     }
   };
-  console.log(categories);
+  //console.log(categories);
   useEffect(() => {
     if (mousedOver) {
       const timer = setInterval(() => {
