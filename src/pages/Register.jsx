@@ -1,13 +1,42 @@
-import logo from "/assets/vistaWeb/logofooter.svg";
-import register from "/assets/vistaWeb/register.png";
-import { Link as Anchor } from "react-router-dom";
+import logo from "/assets/vistaWeb/logofooter.svg"
+import register from "/assets/vistaWeb/register.png"
+import { Link as Anchor, useNavigate } from "react-router-dom"
+import { useRef } from "react"
+import axios from "axios"
+import apiUrl from '../apiUrl'
+import Swal from "sweetalert2"
 
 export default function Register() {
+
+  const navigate = useNavigate()
+  const email = useRef()
+  const photo = useRef()
+  const password = useRef()
+
+  const register_data = () => {
+    let data = {
+      email: email.current.value,
+      photo: photo.current.value,
+      password: password.current.value
+    }
+    //console.log(data)
+    axios.post(apiUrl+'/auth/register',data)
+      .then(()=>Swal.fire({
+        icon: 'success',
+        text: 'sign in please!'
+        }))
+      .then(()=>navigate('/signin'))
+      .catch(err=>Swal.fire({
+        icon: 'error',
+        text: 'sign in please!',
+        html: err.response.data.messages.map(each=>`<p>${each}</p>`).join('')
+      }))
+  }
   return (
-    <main className="md:relative bg-white flex flex-col  items-center w-full h-screen">
+    <main className="md:relative bg-white flex flex-col justify-center items-center w-full h-screen">
       <div className="flex w-full">
-        <div className="flex flex-col md:w-[50vw] w-full pt-[9%] pb-[0%] md:pb-[0%] items-center md:pt-[10%] lg:pt-[7%] xl:pt-[6%]">
-          <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
+        <div className="flex flex-col md:w-[50vw] w-full items-center justify-center">
+          <img src={logo} className="w-[191px] h-[48px]" alt="" />
           <p className="font-semibold text-[32px]">
             Welcome <span className="text-[#4338CA]">back</span>!
           </p>
@@ -17,16 +46,19 @@ export default function Register() {
           </p>
           <form className="flex flex-col w-full items-center mt-[48px]">
             <input
+              ref={email}
               type="email"
               placeholder="Email"
               className="border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
             />
             <input
+              ref={photo}
               type="url"
               placeholder="Photo"
               className="mt-[32px] border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
             />
             <input
+              ref={password}
               type="password"
               placeholder="Password"
               className="mt-[32px] border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
@@ -36,7 +68,8 @@ export default function Register() {
             </label>
             <input
               type="button"
-              value="Sign In"
+              value="Register"
+              onClick={register_data}
               className="mt-[13px] w-[50%] h-[48px] bg-[#4338CA] rounded-[10px] font-roboto font-bold text-[14px] text-white"
             />
             <input

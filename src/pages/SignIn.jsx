@@ -1,35 +1,49 @@
 import logo from "/assets/vistaWeb/logofooter.svg";
 import imgsignin from "/assets/vistaWeb/singin.png";
-import { Link as Anchor, useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { Link as Anchor } from "react-router-dom"
+import { useRef } from "react"
+import axios from "axios"
+import apiUrl from "../apiUrl"
+import Swal from "sweetalert2"
 
 export default function SignIn() {
-  const navigate = useNavigate();
-  const signin = () => {
-    //deberia hacer una peticion al backend para iniciar secion y si todo esta bien: iniciar secion y redirigir a home.
-    // axios.post(url).then(()=>navigate('/')).catch(err=>console.log(err))
-    console.log(email) // la referencia siempre devuelve un objeto con una unica propiedad CURRENT
-    console.log(email.current.value,password.current.value) //leyendo o llamando una referencia
-    let data ={
-      email: email.current.value,
+
+  const email = useRef()                //defino una referencia
+  const password = useRef()
+
+  const signin_data = () => {
+    let data = {
+      email: email.current.value,       //accedo al valor de una referencia
       password: password.current.value
     }
-    setTimeout(() => navigate("/"), 5000);
-  };
-  const email = useRef(); //defino una referencia
-  const password = useRef();
+    //console.log(data)
+    axios.post(apiUrl+'/auth/signin',data)
+      .then(res=> {
+        localStorage.setItem('token',res.data.response.token)
+        localStorage.setItem('user',JSON.stringify(res.data.response.user))
+      })
+      .then(()=>Swal.fire({
+        icon: 'success'
+        }))
+      .then(()=>window.location.replace('/'))
+      .catch(err=>Swal.fire({
+        icon: 'error',
+        text: 'sign in please!',
+        html: err.response.data.messages.map(each=>`<p>${each}</p>`).join('')
+      }))
+  }
 
   return (
     <>
-      <main className="md:relative items-center w-full h-screen">
+      <main className="md:relative flex items-center justify-center w-full h-screen">
         <div className="flex w-full">
           <img
             src={imgsignin}
             className="hidden md:flex  object-cover w-[50vw] h-screen"
             alt=""
           />
-          <div className=" bg-white flex flex-col md:w-[50vw] w-full pt-[19%] pb-[0] items-center md:pt-[14%] lg:pt-[10%] xl:pt-[10%]">
-            <img src={logo} className="mt-[10%] w-[191px] h-[48px]" alt="" />
+          <div className=" bg-white flex flex-col items-center justify-center md:w-[50vw] w-full">
+            <img src={logo} className="w-[191px] h-[48px]" alt="" />
             <p className="font-semibold text-[32px]">
               Welcome <span className="text-[#4338CA]">back</span>!
             </p>
@@ -39,7 +53,7 @@ export default function SignIn() {
             </p>
             <form className="flex flex-col w-full items-center mt-[59px]">
               <input
-                ref={email} //asigno una referencia
+                ref={email}             //asigno una referencia
                 type="email"
                 placeholder="Email"
                 className="border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
@@ -51,7 +65,7 @@ export default function SignIn() {
                 className="mt-[32px] border-2 border-gray-400 w-[50%] h-[48px] rounded-[10px] font-roboto font-medium text-[12px] ps-[14px]"
               />
               <input
-                onClick={signin}
+                onClick={signin_data}
                 type="button"
                 value="Sign In"
                 className="mt-[13px] w-[50%] h-[48px] bg-[#4338CA] rounded-[10px] font-roboto font-bold text-[14px] text-white"
@@ -63,7 +77,7 @@ export default function SignIn() {
               />
             </form>
             <p className="mt-[16px] font-roboto font-medium text-[14px]">
-              you don't have an account yet?{" "}
+              you dont have an account yet?{" "}
               <Anchor to={"/register"} className="text-[#4338CA]">
                 Sign up
               </Anchor>
