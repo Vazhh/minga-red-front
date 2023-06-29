@@ -6,24 +6,24 @@ import { useRef } from "react";
 export default function CiaForm() {
 
     const name = useRef();
-    const web_site = useRef();
+    const website = useRef();
     const profile_image = useRef();
     const description = useRef();
 
-    const authorCreate = ()=>{
+    const ciaCreate = ()=>{
         console.log(name)
-        console.log(web_site)
+        console.log(website)
         console.log(profile_image)
         console.log(description)
 
         let data = {
           name: name.current.value,
-          web_site: web_site.current.value,
-          profile_image: profile_image.current.value.split(',')[0],
-          description: description.current.value.split(',')[1],
+          website: website.current.value,
+          logo: profile_image.current.value,
+          description: description.current.value
         };console.log(data)
       };
-      
+
   return (
     <>
       <main className="md:relative  pb-[20%] bg-[#EBEBEB] flex flex-col  w-full h-screen">
@@ -41,7 +41,7 @@ export default function CiaForm() {
           />
           <input
             type="text"
-            ref={web_site}
+            ref={website}
             placeholder="Web site"
             className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
           />
@@ -60,7 +60,7 @@ export default function CiaForm() {
           />
 
 {/* faltaria el active:true segun el schema del back */}
-          <input type="button" value="send" onClick={authorCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white"/>
+          <input type="button" value="send" onClick={ciaCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white"/>
         </form>
       </main>
     </>
