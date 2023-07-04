@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { path: "/signin", element: <SignIn /> },
       { path: "/register",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return (!user)&&redirect('/')
+        return (user)&&redirect('/')
         }
       , element: <Register /> },
       { path: "/manga-form",loader:()=>{
