@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import Index from "./Index";
 import Main from "../layouts/Main";
 import SignIn from "./SignIn";
@@ -6,6 +6,7 @@ import Register from "./Register";
 import MangaForm from "./MangaForm";
 import AuthorForm from "./AuthorForm";
 import CiaForm from "./CiaForm";
+import NotAllowed from "./NotAllowed";
 
 
 const router = createBrowserRouter([
@@ -17,10 +18,19 @@ const router = createBrowserRouter([
       //cuyos hijos van a ser TODAS las interfaces que tenga la app
       { path: "/", element: <Index /> }, // para ver index se concatena /main/index
       { path: "/signin", element: <SignIn /> },
-      { path: "/register", element: <Register /> },
-      { path: "/manga-form", element: <MangaForm /> },
+      { path: "/register",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (!user)&&redirect('/')
+        }
+      , element: <Register /> },
+      { path: "/manga-form",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (user.role===0||user.role===3)&&redirect('/not-allowed')
+        }
+      , element: <MangaForm /> },
       { path: "/author-form", element: <AuthorForm /> },
       { path: "/cia-form", element: <CiaForm />},
+      { path: "/not-allowed", element: <NotAllowed /> }
     ],
   },
 ]);
