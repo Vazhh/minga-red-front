@@ -5,9 +5,9 @@ import SignIn from "./SignIn";
 import Register from "./Register";
 import MangaForm from "./MangaForm";
 import AuthorForm from "./AuthorForm";
+import ChapterForm from './ChapterForm';
 import CiaForm from "./CiaForm";
 import NotAllowed from "./NotAllowed";
-
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { path: "/signin", element: <SignIn /> },
       { path: "/register",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return (!user)&&redirect('/')
+        return (user)&&redirect('/')
         }
       , element: <Register /> },
       { path: "/manga-form",loader:()=>{
@@ -29,6 +29,11 @@ const router = createBrowserRouter([
         }
       , element: <MangaForm /> },
       { path: "/author-form", element: <AuthorForm /> },
+      { path: "/:manga_id/chapther-form",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (user.role===0||user.role===3)&&redirect('/not-allowed')
+        }
+      , element: <ChapterForm /> },
       { path: "/cia-form", element: <CiaForm />},
       { path: "/not-allowed", element: <NotAllowed /> }
     ],

@@ -36,15 +36,20 @@ export default function Carousel() {
     }
   };
   //console.log(categories);
+  // useEffect(() => {
+  //   if (mousedOver) {
+  //     const timer = setInterval(() => {
+  //       setCounter((prevCount) => (prevCount + 1) % categories.length);
+  //     }, 4000);
+  //     return () => clearInterval(timer);
+  //   } 
+  // }, [mousedOver]);
   useEffect(() => {
-    if (mousedOver) {
-      const timer = setInterval(() => {
-        setCounter((prevCount) => (prevCount + 1) % categories.length);
-      }, 4000);
-      return () => clearInterval(timer);
-    } 
-  }, [mousedOver]);
-  
+    const timer = setInterval(() => {
+      setCounter((prevCount) => (prevCount + 1) % categories.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [categories]);
   return (
     <div onMouseOver={() => setMousedOver(true)}
     onMouseOut={() => setMousedOver(false)} className="hidden md:inline-flex md:mt-[16.5%] lg:mt-[16.8%] xl:mt-[17%] 2xl:mt-[16.5%] xl:h-[380px] lg:h-[280px] md:h-[240px] bg-white w-full items-center justify-center">

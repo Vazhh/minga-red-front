@@ -44,6 +44,7 @@ export default function NavBar() {
             { to: "/", title: "Home" },
             { to: "/manga-form", title: "Create Manga" },
             { to: "/author-form", title: "Create Author"},
+            { to: "/:manga_id/chapther-form", title: "Create Chapter"},
             { to: "/cia-form", title: "Create company"},
             { to: "/", title: "Sign Out" }
           ])
