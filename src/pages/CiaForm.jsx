@@ -1,10 +1,14 @@
 import React from 'react'
 import profilePhoto from "/assets/vistaWeb/profilePhoto.png";
+import { useNavigate } from 'react-router';
 import { useRef } from "react";
+import apiURL from "../apiUrl";
+import axios from 'axios';
 
 
 export default function CiaForm() {
 
+    const navigate = useNavigate();
     const name = useRef();
     const website = useRef();
     const profile_image = useRef();
@@ -22,6 +26,8 @@ export default function CiaForm() {
           logo: profile_image.current.value,
           description: description.current.value
         };console.log(data)
+        let headers = {headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}}
+        axios.post(apiURL+"/companies", data, headers).then(()=> navigate("/")).catch(error => console.log(error))
       };
 
   return (
