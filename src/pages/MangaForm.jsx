@@ -18,22 +18,26 @@ export default function Mangaform() {
   );
   console.log(categories);
   const navigate = useNavigate();
-  const manga = () => {
-    //console.log(title);
-    //console.log(category);
-    //console.log(description);
-    //console.log(photo);
-    let selectedCategory = categories.find(
-      (each) => each.name === category.current.value
-    );
-    let data = {
-      title: title.current.value,
-      category_id: selectedCategory._id,
-      description: description.current.value,
-      cover_photo: photo.current.value,
-    };
-    setTimeout(() => navigate("/"), 2000);
-    console.log(data);
+  const manga = async() => {
+    try {
+      let selectedCategory = categories.find(
+        (each) => each.name === category.current.value
+      );
+      let data = {
+        title: title.current.value,
+        category_id: selectedCategory._id,
+        description: description.current.value,
+        cover_photo: photo.current.value,
+      };
+      // setTimeout(() => navigate("/"), 2000);
+      let token = localStorage.getItem('token')
+      let headers = { headers:{ 'Authorization':`Bearer ${token}` } }
+      let response = axios.post(apiURL+"/mangas",data,headers)
+      console.log(response);
+    } catch (error) {
+      console.log
+    }
+    
   };
   const title = useRef();
   const category = useRef();
