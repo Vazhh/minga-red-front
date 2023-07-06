@@ -3,6 +3,7 @@ import axios from "axios";
 import apiURL from "../apiUrl";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
+import Swal from "sweetalert2";
 
 export default function Mangaform() {
   const [categories, setCategories] = useState([]);
@@ -18,26 +19,45 @@ export default function Mangaform() {
   );
   console.log(categories);
   const navigate = useNavigate();
-  const manga = async() => {
+  const manga = async () => {
     try {
+      let user = JSON.parse(localStorage.getItem("user"));
+      console.log(user)
       let selectedCategory = categories.find(
         (each) => each.name === category.current.value
       );
       let data = {
+        author_id:user._id,
         title: title.current.value,
         category_id: selectedCategory._id,
         description: description.current.value,
         cover_photo: photo.current.value,
       };
       // setTimeout(() => navigate("/"), 2000);
-      let token = localStorage.getItem('token')
-      let headers = { headers:{ 'Authorization':`Bearer ${token}` } }
-      let response = axios.post(apiURL+"/mangas",data,headers)
-      console.log(response);
+      let token = localStorage.getItem("token");
+      let headers = { headers: { Authorization: `Bearer ${token}` } };
+      await axios.post(apiURL + "/mangas", data, headers).then(()=>{
+        Swal.fire({
+          "icon":"success",
+          "text":"Manga created"
+        })
+        navigate("/")
+      }
+      )
     } catch (error) {
-      console.log
+      if(error.response.data?.messages){
+        Swal.fire({
+          "icon":"error",
+          "html":error.response.data.messages.map(each=>`<p>${each}</p>`).join("")
+        })
+      }else{
+        Swal.fire({
+          "icon":"error",
+          "html":`<p>${error.response.data}</p>`
+        })
+      }
+      
     }
-    
   };
   const title = useRef();
   const category = useRef();
@@ -53,11 +73,12 @@ export default function Mangaform() {
           className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
         />
         <select
+          defaultValue="0"
           ref={category}
           name="Insert category"
           className="mt-[32px] border-b-2  bg-[#EBEBEB] border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[10px] pr-[14px] text-[#9D9D9D]"
         >
-          <option value="" selected>
+          <option value="0">
             Insert category
           </option>
           {categories?.map((category, i) => (

@@ -25,7 +25,13 @@ const router = createBrowserRouter([
       , element: <Register /> },
       { path: "/manga-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return (user.role===0||user.role===3)&&redirect('/not-allowed')
+        console.log(user)
+        if(user){
+          user = {role: user.role}
+        }else{
+          user = {role: 0}
+        }
+        return (user.role===0||user.role===3||user===null)&&redirect('/not-allowed')
         }
       , element: <MangaForm /> },
       { path: "/author-form", element: <AuthorForm /> },
