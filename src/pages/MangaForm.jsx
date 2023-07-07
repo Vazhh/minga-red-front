@@ -21,15 +21,12 @@ export default function Mangaform() {
   const navigate = useNavigate();
   const manga = async () => {
     try {
-      let user = JSON.parse(localStorage.getItem("user"));
-      console.log(user)
       let selectedCategory = categories.find(
         (each) => each.name === category.current.value
       );
       let data = {
-        author_id:user._id,
         title: title.current.value,
-        category_id: selectedCategory._id,
+        category_id: selectedCategory?._id,
         description: description.current.value,
         cover_photo: photo.current.value,
       };
@@ -45,17 +42,12 @@ export default function Mangaform() {
       }
       )
     } catch (error) {
-      if(error.response.data?.messages){
+      //console.log(error)
         Swal.fire({
           "icon":"error",
           "html":error.response.data.messages.map(each=>`<p>${each}</p>`).join("")
         })
-      }else{
-        Swal.fire({
-          "icon":"error",
-          "html":`<p>${error.response.data}</p>`
-        })
-      }
+      
       
     }
   };
