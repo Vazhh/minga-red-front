@@ -47,8 +47,6 @@ export default function Mangaform() {
           "icon":"error",
           "html":error.response.data.messages.map(each=>`<p>${each}</p>`).join("")
         })
-      
-      
     }
   };
   const title = useRef();
@@ -70,7 +68,7 @@ export default function Mangaform() {
           name="Insert category"
           className="mt-[32px] border-b-2  bg-[#EBEBEB] border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[10px] pr-[14px] text-[#9D9D9D]"
         >
-          <option value="0">
+          <option disabled value="0">
             Insert category
           </option>
           {categories?.map((category, i) => (
