@@ -7,9 +7,6 @@ export default function ChapterForm() {
     const pages = useRef();
 
     const chapterCreate = ()=>{
-        console.log(title)
-        console.log(order)
-        console.log(pages)
 
         let data = {
           title: title.current.value,
