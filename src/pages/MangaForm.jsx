@@ -17,7 +17,7 @@ export default function Mangaform() {
     },
     [] //si el array esta vacio el efecto se ejecuta por primera y unica vez cuando el componente se monta, si el array tienes alguna/s varible el efecto se va a ejecutar cada vez que se modifique el valor de esos parametros
   );
-  console.log(categories);
+  // console.log(categories);
   const navigate = useNavigate();
   const manga = async () => {
     try {

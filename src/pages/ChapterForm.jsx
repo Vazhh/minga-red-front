@@ -1,23 +1,42 @@
+import { useNavigate,useParams } from "react-router-dom"
 import { useRef } from "react";
+import axios from "axios"
+import apiURL from '../apiUrl'
+import Swal from "sweetalert2"
 
 export default function ChapterForm() {
 
     const title = useRef();
     const order = useRef();
     const pages = useRef();
+    const navigate = useNavigate()
+    const { manga_id } = useParams()
 
-    const chapterCreate = ()=>{
-        console.log(title)
-        console.log(order)
-        console.log(pages)
-
+    const chapterCreate = async () => {
+      // try {
         let data = {
           title: title.current.value,
-          order: order.current.value,
+          order: order.current.value?.trim(),
           pages: pages.current.value.split(','),
-        };console.log(data)
-      };
+          manga_id
+        };
+        
+        let token = localStorage.getItem('token');
+        let headers = { headers: { Authorization: `Bearer ${token}` } };
+        await axios.post(apiURL+'/chapters',data,headers)
+        .then(()=>Swal.fire({
+            icon: 'success',
+            text: 'chapter added!'
+            }))
+        .then(()=>navigate('/'))
+        .catch(err=> {console.log(err.response)
+            Swal.fire({
+            icon: 'error',
+            html: err.response.data?.messages?.map(each=>`<p>${each}</p>`).join('')
+        })})
 
+    };
+    
   return (
     <>
       <main className="md:relative pb-[20%] bg-[#EBEBEB] flex flex-col justify-center w-full h-screen">

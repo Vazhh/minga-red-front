@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       , element: <Register /> },
       { path: "/manga-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        console.log(user)
+        // console.log(user)
         if(user){
           user = {role: user.role}
         }else{

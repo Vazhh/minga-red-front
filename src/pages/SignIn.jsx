@@ -26,6 +26,7 @@ export default function SignIn() {
       .then(() =>
         Swal.fire({
           icon: "success",
+          text:"Login success!"
         })
       )
       .then(() => window.location.replace("/"))
