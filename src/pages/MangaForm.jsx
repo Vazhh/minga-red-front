@@ -55,6 +55,9 @@ export default function Mangaform() {
   const photo = useRef();
   return (
     <main className="md:relative pt-[15%] pb-[20%] bg-[#EBEBEB] flex flex-col  items-center w-full h-screen">
+              <div className="items-center flex flex-col  mt-24 ">
+          <h1 className="font-roboto text-[36px] pb-4 ">New manga</h1>
+        </div>      
       <form className="flex flex-col w-full items-center mt-[48px]">
         <input
           ref={title}
