@@ -40,7 +40,10 @@ const router = createBrowserRouter([
         return (user.role===0||user.role===3)&&redirect('/not-allowed')
         }
       , element: <ChapterForm /> },
-      { path: "/cia-form", element: <CiaForm />},
+      { path: "/cia-form", loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (user.role!=0)&&redirect('/not-allowed')
+        }, element: <CiaForm />},
       { path: "/not-allowed", element: <NotAllowed /> }
     ],
   },
