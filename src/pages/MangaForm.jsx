@@ -4,6 +4,7 @@ import apiURL from "../apiUrl";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import Button from "../componets/Button";
 
 export default function Mangaform() {
   const [categories, setCategories] = useState([]);
@@ -92,12 +93,13 @@ export default function Mangaform() {
           placeholder="Insert cover photo"
           className="mt-[32px] border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
         />
-        <input
+        {/* <input
           onClick={manga}
           type="button"
           value="Send"
           className="hover:cursor-pointer mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white"
-        />
+        /> */}
+        <Button onClick={manga} value='Send' />
       </form>
     </main>
   );
