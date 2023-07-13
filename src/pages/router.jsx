@@ -17,7 +17,11 @@ const router = createBrowserRouter([
     children: [
       //cuyos hijos van a ser TODAS las interfaces que tenga la app
       { path: "/", element: <Index /> }, // para ver index se concatena /main/index
-      { path: "/signin", element: <SignIn /> },
+      { path: "/signin",loader:()=>{
+      let user = JSON.parse(localStorage.getItem('user'))
+      return (user)&&redirect('/')
+      }      
+      , element: <SignIn /> },
       { path: "/register",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
         return (user)&&redirect('/')
@@ -34,16 +38,21 @@ const router = createBrowserRouter([
         return (user.role===0||user.role===3||user===null)&&redirect('/not-allowed')
         }
       , element: <MangaForm /> },
-      { path: "/author-form", element: <AuthorForm /> },
+      { path: "/author-form",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return ( !user || user.role===1 || user.role===2) && redirect('/not-allowed')
+        } 
+      , element: <AuthorForm /> },
       { path: "/:manga_id/chapther-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return (user.role===0||user.role===3)&&redirect('/not-allowed')
+        return ( !user || user.role===0 || user.role===3) && redirect('/not-allowed')
         }
       , element: <ChapterForm /> },
       { path: "/cia-form", loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return (user.role!=0)&&redirect('/not-allowed')
-        }, element: <CiaForm />},
+        return ( !user || user.role===1 || user.role===2) && redirect('/not-allowed')
+        } 
+      , element: <CiaForm />},
       { path: "/not-allowed", element: <NotAllowed /> }
     ],
   },

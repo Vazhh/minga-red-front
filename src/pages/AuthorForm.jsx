@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import apiURL from "../apiUrl";
-
+import Button from "../componets/Button";
 
 export default function AuthorForm() {
 
@@ -80,8 +80,8 @@ export default function AuthorForm() {
             className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
           />
           {/* faltaria el active:true segun el schema del back */}
-          <input type="button" value="send" onClick={authorCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white" />
-
+          {/* <input type="button" value="send" onClick={authorCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white" /> */}
+          <Button onClick={authorCreate} value='Send' />
         </form>
       </main>
     </>
