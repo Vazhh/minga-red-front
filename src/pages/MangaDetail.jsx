@@ -1,5 +1,4 @@
 import naruto from '/assets/vistaMobile/naruto.png';
-import reactions from '/assets/vistaMobile/reactions.png';
 import good from '/assets/vistaMobile/good.png';
 import bad from '/assets/vistaMobile/bad.png';
 import wow from '/assets/vistaMobile/wow.png';

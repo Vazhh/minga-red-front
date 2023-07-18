@@ -35,7 +35,11 @@ const router = createBrowserRouter([
         return (user.role===0||user.role===3||user===null)&&redirect('/not-allowed')
         }
       , element: <MangaForm /> },
-      { path: "/author-form", element: <AuthorForm /> },
+      { path: "/author-form",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (user.role!=0)&&redirect('/not-allowed')
+        }, element: <MangaForm /> },
+
       { path: "/:manga_id/chapther-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
         return (user.role===0||user.role===3)&&redirect('/not-allowed')
