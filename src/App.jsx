@@ -3,6 +3,9 @@ import router from "./pages/router"
 import axios from "axios"
 import { useEffect } from "react"
 import apiURL from "./apiUrl"
+import store from "./store/store"
+import { Provider } from "react-redux"
+
 
 function header() {
   let token = localStorage.getItem('token')
@@ -21,7 +24,9 @@ function App() {
   },[])
 
   return (
+    <Provider store={store}>
     <RouterProvider router={router}/>
+    </Provider>
   );
 }
 
