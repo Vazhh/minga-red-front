@@ -5,7 +5,7 @@ import { useRef } from "react";
 import apiURL from "../apiUrl";
 import axios from 'axios';
 import Swal from "sweetalert2";
-
+import Button from "../componets/Button";
 
 export default function CiaForm() {
 
@@ -81,7 +81,8 @@ export default function CiaForm() {
           />
 
 {/* faltaria el active:true segun el schema del back */}
-          <input type="button" value="send" onClick={ciaCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white"/>
+          {/* <input type="button" value="send" onClick={ciaCreate} className="mt-[58px] w-[50%] h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white"/> */}
+          <Button onClick={ciaCreate} value='Send' />
         </form>
       </main>
     </>
