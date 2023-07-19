@@ -8,6 +8,7 @@ import AuthorForm from "./AuthorForm";
 import ChapterForm from './ChapterForm';
 import CiaForm from "./CiaForm";
 import NotAllowed from "./NotAllowed";
+import MangaDetail from "./MangaDetail";
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
         return (user.role===0||user.role===3||user===null)&&redirect('/not-allowed')
         }
       , element: <MangaForm /> },
-      { path: "/author-form", element: <AuthorForm /> },
+      { path: "/author-form",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return (user.role!=0)&&redirect('/not-allowed')
+        }, element: <MangaForm /> },
+
       { path: "/:manga_id/chapther-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
         return (user.role===0||user.role===3)&&redirect('/not-allowed')
@@ -44,7 +49,8 @@ const router = createBrowserRouter([
         let user = JSON.parse(localStorage.getItem('user'))
         return (user.role!=0)&&redirect('/not-allowed')
         }, element: <CiaForm />},
-      { path: "/not-allowed", element: <NotAllowed /> }
+      { path: "/not-allowed", element: <NotAllowed /> },
+      { path: "/manga-detail", element: <MangaDetail /> }
     ],
   },
 ]);
