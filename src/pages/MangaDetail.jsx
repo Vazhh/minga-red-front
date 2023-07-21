@@ -1,7 +1,7 @@
 import TextBodyMangaD from '../componets/TextBodyMangaD.jsx'
 import ChaptersDetails from '../componets/ChaptersDetail';
 import MangaDetails from '../componets/MangasDetail.jsx';
-
+import ButtonMangaChapter from '../componets/ButtonMangaChapter.jsx'
 
 export default function MangaDetail() {
     return (
@@ -9,6 +9,7 @@ export default function MangaDetail() {
          <TextBodyMangaD/>
          <MangaDetails/>
          <ChaptersDetails/>
+         
         </main>
 
     );
