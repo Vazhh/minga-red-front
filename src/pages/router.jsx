@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         return ( !user || user.role===1 || user.role===2) && redirect('/not-allowed')
         }, element: <CiaForm />},
       { path: "/not-allowed", element: <NotAllowed /> },
-      { path: "/manga-detail", element: <MangaDetail /> }
+      { path: "/manga/:manga_id/:page", element: <MangaDetail /> }
     ],
   },
 ]);
