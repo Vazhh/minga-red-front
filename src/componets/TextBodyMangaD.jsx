@@ -33,14 +33,14 @@ export default function MangaDetail() {
     )
     const { manga_id, page } = useParams()
     return (
-        <main >
-            <img className='px-4 flex items-center mx-auto mt-20' src={manga.cover_photo} alt="" />
-            <h1 className='px-4 pt-4 text-black font-poppins font-light	text-[40px] tracking-wide leading-[95.187%] '>{manga.title}</h1>
-            <div className='flex justify-between items-center font-poppins px-4 py-2'>
+        <main className="  pb-[20%] bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
+            <img className='px- flex items-center mx-auto mt-20 w-[90%] h-[352px] sm:w-[500px] md:w-[700px] object-contain ' src={manga.cover_photo} alt="" />
+            <h1 className='px-4 sm:px-[14%] pt-4 text-black font-poppins font-light	text-[40px] tracking-wide leading-[95.187%] '>{manga.title}</h1>
+            <div className='flex justify-between items-center sm:px-[10%] w-[90%] font-poppins md:m-2  px-4 py-2'>
                 <div className='text-xs  rounded-2xl h-[37px] w-[70px] justify-center flex items-center  font-poppins' style={ {backgroundColor:manga.category_id?.hover, color:manga.category_id?.color } } >{manga?.category_id?.name}</div>
                 <h2 className='text-xl tracking-wider text-[#9D9D9D] '>{manga.author_id?.name.toUpperCase()}</h2>
             </div>
-            <div className='flex p-12 justify-between mt-4'>
+            <div className='flex  justify-between items-center  w-[300px] sm:w-[400px] mx-auto my-8'>
                 <img src={good} alt="" />
                 <img src={bad} alt="" />
                 <img src={wow} alt="" />
@@ -67,11 +67,7 @@ export default function MangaDetail() {
                 <input type="button" value="Manga" className='flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 w-[50%] h-full rounded-2xl text-white ' />
                 < input type="button" value="Chapter" div className='flex items-center justify-center bg-#9D9D9D w-[50%] h-full rounded-2xl text-[#9D9D9D] ' />
             </div>
-            <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="manga chapter" class="sr-only peer" />
-                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"> manga chapter </div>
-                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
-            </label>
+            
 
 
 
