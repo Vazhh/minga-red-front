@@ -38,6 +38,7 @@ export default function MangaDetail() {
 
         }, []
     )
+    const [show, setShow]= useState(true)
     return (
         <main className="  pb-[10%] bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
             <main className="   bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
@@ -72,18 +73,20 @@ export default function MangaDetail() {
                         <h4 className='text-xs text[#9D9D9D] font-light'>Leanguage</h4>
                     </div>
 
-                </div>
+                </div>{show? <MangaDetails /> :  <ChaptersDetails/>} 
                 <div className='flex justify-between items-center mt-10 mx-auto w-[390px] h-[45px]  border-2 rounded-2xl shadow-[0px_0px_7px_0px_rgba(0,0,0,0.15)] '>
-                    <input type="button" value="Manga" className='flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 w-[50%] h-full rounded-2xl text-white ' />
-                    < input type="button" value="Chapter" div className='flex items-center justify-center bg-#9D9D9D w-[50%] h-full rounded-2xl text-[#9D9D9D] ' />
+                   
+                   <input type="button" value="Manga" onClick={()=>setShow(!show)} className='flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 w-[50%] h-full rounded-2xl text-white ' />
+                    < input type="button" value="Chapter"  onClick={()=>setShow(!show)} div className='flex items-center justify-center bg-#9D9D9D w-[50%] h-full rounded-2xl text-[#9D9D9D] ' />
                 </div>
+
 
 
 
 
             </main>
-            <MangaDetails />
-            <ChaptersDetails />
+            
+            
 
         </main>
 
