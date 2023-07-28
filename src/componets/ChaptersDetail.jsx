@@ -1,18 +1,44 @@
-import naruto from '/assets/vistaMobile/naruto.png'
+import { useEffect, useState } from 'react';
+import apiURL from '../apiUrl.js';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import iconComment from '/assets/vistaMobile/iconComment.png'
+import { Link as Anchor } from 'react-router-dom';
+
 export default function ChaptersDetails() {
-return (
-    <div className='flex justify-center items-center mx-auto mt-8 w-[300px] bg-white justify-around '>
-                <img src={naruto} alt="" className='w-14'/>
-                <div className=' flex  flex-col items-center'>
-                    <h1>Chapter #1</h1>
-                    <div>
-                        <img src="" alt="" />
-                        <h2>169</h2>
+    const { manga_id, page } = useParams()
+    const [chapters, setChapters] = useState([])
+    useEffect(
+        () => {
+            let token = localStorage.getItem("token");
+            let headers = { headers: { Authorization: `Bearer ${token}` } };
+            axios(apiURL + '/chapters?manga_id=' + manga_id + '&page=' + page, headers)
+                
+                .then(res => setChapters(res.data.response))
+                .catch(error => console.log(error))
+        }, []
+
+    )
+    console.log(chapters)
+    return (
+        <>
+            {
+                chapters?.map((each, index) => (
+                    <div className='flex justify-center items-center mx-auto mt-8 w-[300px] justify-around '>
+                        <img src={each?.cover_photo} alt="" className='w-14' />
+                        <div className=' flex  flex-col items-center'>
+                            <h1>{each?.title}</h1>
+                            <div className='flex'>
+                                <img src={iconComment} alt="" />
+                                <h2>169</h2>
+                            </div>
+
+                        </div>
+                        <Anchor to={'/chapter/' + each.manga_id._id + '/' + page}  className="flex   h-[68px] bg-[#4338CA] rounded-2xl font-roboto font-bold text-[24px] text-white cursor-pointer" >Read</Anchor>
+
                     </div>
-                       
-                </div>
-                <input type="button" value="read" className="flex   h-[68px] bg-[#4338CA] rounded-2xl font-roboto font-bold text-[24px] text-white cursor-pointer"/>
-     
-            </div>
-)
+                ))
+            }
+        </>
+    )
 }
