@@ -24,8 +24,8 @@ export default function ChaptersDetails() {
         <>
             {
                 chapters?.map((each, index) => (
-                    <div className='flex justify-center items-center mx-auto mt-8 w-[300px] justify-around '>
-                        <img src={each?.cover_photo} alt="" className='w-14' />
+                    <div className='flex justify-center items-center mx-auto mt-8 w-[384px] justify-around '>
+                        <img src={each?.cover_photo} alt="image-chapter" className='w-20' />
                         <div className=' flex  flex-col items-center'>
                             <h1>{each?.title}</h1>
                             <div className='flex'>
@@ -34,7 +34,7 @@ export default function ChaptersDetails() {
                             </div>
 
                         </div>
-                        <Anchor to={'/chapter/' + each.manga_id._id + '/' + page}  className="flex   h-[68px] bg-[#4338CA] rounded-2xl font-roboto font-bold text-[24px] text-white cursor-pointer" >Read</Anchor>
+                        <Anchor to={'/chapter/' + each.manga_id._id + '/' + page}  className="flex justify-center  items-center w-[100px] md:w-[150px] h-[60px] md:h-[68px] bg-[#4338CA] rounded-full font-roboto font-bold text-[24px] text-white cursor-pointer" >Read</Anchor>
 
                     </div>
                 ))

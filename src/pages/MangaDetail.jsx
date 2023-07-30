@@ -54,7 +54,7 @@ export default function MangaDetail() {
     return (
         <main className="  pb-[10%] bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
             <main className="   bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
-                <img className='px- flex items-center mx-auto mt-20  h-[400px] w-[400px]   ' src={manga.cover_photo} alt="imagen" />
+                <img className='px- flex items-center mx-auto mt-20 object-contain h-[400px] w-[400px]   ' src={manga.cover_photo} alt="imagen" />
 
                 {title ? <TitleManga /> : <TitleChapter />}
                 <div className='flex justify-between items-center mt-10 mx-auto w-[390px] h-[45px]  border-2 rounded-2xl shadow-[0px_0px_7px_0px_rgba(0,0,0,0.15)] '>
