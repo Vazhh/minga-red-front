@@ -1,5 +1,6 @@
 import left from "/assets/vistaWeb/ArrowIzq.svg";
 import right from "/assets/vistaWeb/ArrowDer.svg";
+import coment from "/assets/vistaWeb/coment.png"
 import { useParams } from "react-router";
 import axios from "axios";
 import apiURL from "../apiUrl";
@@ -80,6 +81,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <p className="flex justify-center mb-5"><img src={coment} alt="" className="w-[5%]"/> 42</p>
     </main>
   );
 }
