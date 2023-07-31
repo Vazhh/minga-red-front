@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
       { path: "/me",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
-        return ( !user || user.role===0 || user.role===2 || user.role===3)&&redirect('/not-allowed')
+        return ( !user || user.role !== 1 )&&redirect('/not-allowed')
         }
       , element: <Author /> },
     ],
