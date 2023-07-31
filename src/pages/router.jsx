@@ -10,6 +10,7 @@ import CiaForm from "./CiaForm";
 import NotAllowed from "./NotAllowed";
 import MangaDetail from "./MangaDetail";
 import Page from "./Page";
+import Author from './Author'
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
         // return (user.role!=0)&&redirect('/not-allowed')
         return ( !user || user.role===1 || user.role===2) && redirect('/not-allowed')
         }
-      , element: <MangaForm /> },
+      , element: <AuthorForm /> },
       { path: "/:manga_id/chapther-form",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
         return ( !user || user.role===0 || user.role===3)&&redirect('/not-allowed')
@@ -61,7 +62,13 @@ const router = createBrowserRouter([
         return (user.role===0)&&redirect('/not-allowed')
         }
       , element: <Page /> },
-      { path: "/manga/:manga_id/:page", element: <MangaDetail /> }
+      { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
+      { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
+      { path: "/me",loader:()=>{
+        let user = JSON.parse(localStorage.getItem('user'))
+        return ( !user || user.role !== 1 )&&redirect('/not-allowed')
+        }
+      , element: <Author /> },
     ],
   },
 ]);
