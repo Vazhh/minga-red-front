@@ -49,6 +49,7 @@ export default function NavBar() {
           { to: "/", title: "Home" },
           { to: "/manga-form", title: "Create Manga" },
           { to: "/:manga_id/chapther-form", title: "Create Chapter" },
+          { to: "/me", title: "Profile" },
           { to: "/", title: "Sign Out" },
         ]);
       }else if(user.role===3){
