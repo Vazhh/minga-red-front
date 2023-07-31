@@ -81,14 +81,14 @@ export default function NavBar() {
           setShow={setShow}
         />
       )}
-      <nav className="mt-1 z-10 flex justify-between w-full absolute ps-3 pr-5 sm:mt-3 sm:ps-3 sm:pr-5 2xl:mt-8 2xl:ps-11 2xl:pr-11">
+      <nav className="mt-1 z-10 flex justify-between items-center w-full absolute ps-3 pr-5 sm:mt-3 sm:ps-3 sm:pr-5 2xl:mt-8 2xl:ps-11 2xl:pr-11">
         <img
           src={menu}
           onClick={() => setShow(!show)}
-          className="bg-indigo-700 rounded-lg ps-1 hover:bg-slate-600 w-14 hover:cursor-pointer"
+          className="bg-indigo-700 rounded-lg ps-1 hover:bg-slate-600 w-14 hover:cursor-pointer h-[7vh]"
           alt=""
         />
-        <img src={logo} className="w-14  left-3 sm:w-14  2xl:w-24  " alt="" />
+        <img src={logo} className="w-14  left-3 sm:w-14  2xl:w-24 h-[6vh] " alt="" />
       </nav>
     </>
   );
