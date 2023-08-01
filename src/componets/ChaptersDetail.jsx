@@ -14,7 +14,7 @@ export default function ChaptersDetails() {
     axios(apiURL + "/chapters?manga_id=" + manga_id + "&page=" + page, headers)
       .then((res) => setChapters(res.data.response))
       .catch((error) => console.log(error));
-  }, []);
+  },[]);
   console.log(chapters);
   return (
     <>
