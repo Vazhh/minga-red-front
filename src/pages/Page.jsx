@@ -45,9 +45,9 @@ export default function Page() {
   const next = () => {
     if (currentPage !== pages.length - 1) {
       setCurrentPage(currentPage + 1);
-    } else {
-      setCurrentPage(0);
+    } else {  
       navigate("/chapter/" + nextChapter + "/1");
+      setCurrentPage(0);
     }
   };
 
