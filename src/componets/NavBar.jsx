@@ -40,6 +40,7 @@ export default function NavBar() {
       if (user.role === 0) {
         setOptions([
           { to: "/", title: "Home" },
+          {to:"/mangas/1", title: "Mangas"},
           { to: "/author-form", title: "Create Author" },
           { to: "/cia-form", title: "Create company" },
           { to: "/", title: "Sign Out" },
@@ -47,6 +48,7 @@ export default function NavBar() {
       }else if(user.role===1||user.role===2){
         setOptions([
           { to: "/", title: "Home" },
+          {to:"/mangas/1", title: "Mangas"},
           { to: "/manga-form", title: "Create Manga" },
           { to: "/:manga_id/chapther-form", title: "Create Chapter" },
           { to: "/", title: "Sign Out" },
@@ -54,6 +56,7 @@ export default function NavBar() {
       }else if(user.role===3){
         setOptions([
           { to: "/", title: "Home" },
+          {to:"/mangas/1", title: "Mangas"},
           { to: "/", title: "Sign Out" },
         ]);
       }

@@ -3,7 +3,8 @@ import mangaAction from "../actions/manga";
 
 const {saveManga}= mangaAction
 const initialState= {
-    manga:{}
+    text:'',
+    // checks:[]
 }
 const mangaReducer = createReducer(
     initialState,
@@ -12,7 +13,7 @@ const mangaReducer = createReducer(
         (state,action)=>{
             const newState={
                 ...state,
-                manga: action.payload.manga
+                text: action.payload.text,
             }
             return newState
         }

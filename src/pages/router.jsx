@@ -9,6 +9,7 @@ import ChapterForm from './ChapterForm';
 import CiaForm from "./CiaForm";
 import NotAllowed from "./NotAllowed";
 import MangaDetail from "./MangaDetail";
+import Mangas from "./Mangas";
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -55,7 +56,8 @@ const router = createBrowserRouter([
         return ( !user || user.role===1 || user.role===2) && redirect('/not-allowed')
         }, element: <CiaForm />},
       { path: "/not-allowed", element: <NotAllowed /> },
-      { path: "/manga/:manga_id/:page", element: <MangaDetail /> }
+      { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
+      {path:"/mangas/:page", element: <Mangas/>}
     ],
   },
 ]);
