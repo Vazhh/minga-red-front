@@ -47,8 +47,8 @@ export default function CiaForm() {
 
   return (
     <>
-      <main className="md:relative  pb-[20%] bg-[#EBEBEB] flex flex-col  w-full h-screen">
-        <div className="items-center flex flex-col  mt-24 ">
+      <main className="md:relative pb-[20%] bg-[#EBEBEB] flex flex-col w-full h-screen">
+        <div className="items-center flex flex-col mt-24 ">
           <h1 className="font-roboto text-[36px] pb-4 ">New Company</h1>
           <img src={profilePhoto} alt="" />
         </div>

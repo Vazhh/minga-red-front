@@ -55,7 +55,7 @@ export default function Mangaform() {
   const description = useRef();
   const photo = useRef();
   return (
-    <main className="md:relative pt-[15%] pb-[20%] bg-[#EBEBEB] flex flex-col  items-center w-full h-screen">
+    <main className="md:relative pb-[20%] bg-[#EBEBEB] flex flex-col  items-center w-full h-screen">
               <div className="items-center flex flex-col  mt-24 ">
           <h1 className="font-roboto text-[36px] pb-4 ">New manga</h1>
         </div>      
@@ -64,7 +64,7 @@ export default function Mangaform() {
           ref={title}
           type="text"
           placeholder="Insert title"
-          className="border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
+          className="mt-[32px] border-b-2 bg-transparent border-gray-400 w-[50%] h-[48px] font-roboto font-medium text-[19px] ps-[14px]"
         />
         <select
           defaultValue="0"
