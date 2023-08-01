@@ -29,8 +29,11 @@ export default function AuthorForm() {
         })
       }
       )
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      Swal.fire({
+        icon: 'error',
+        html: err.response.data?.messages?.map(each => `<p>${each}</p>`).join('')
+      })
     }
 
   };
@@ -42,14 +45,14 @@ export default function AuthorForm() {
   const photo = useRef();
   return (
     <>
-      <main className="md:relative  pb-[20%] bg-[#EBEBEB] flex flex-col  w-full h-screen">
+      <main className="md:relative  pb-[20%] bg-[#EBEBEB] flex flex-col  w-full h-full">
 
         <div className="items-center flex flex-col  mt-24 ">
           <h1 className="font-roboto text-[36px] pb-4 ">New Author</h1>
           <img src={profilePhoto} alt="" />
         </div>
 
-        <form className="flex flex-col w-full items-center mt-[28px]">
+        <form className="flex flex-col w-full  items-center mt-[28px]">
           <input
             type="text"
             ref={name}
@@ -86,4 +89,4 @@ export default function AuthorForm() {
       </main>
     </>
   )
-} 
+}
