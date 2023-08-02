@@ -63,7 +63,7 @@ export default function Page() {
   return (
     <main className="flex flex-col items-center justify-center w-full">
       <div className="w-full bg-indigo-700 flex justify-center items-center h-[8.5vh] sm:h-[8vh] md:h-[9vh] lg:h-[9vh] 2xl:h-[12vh]">
-        <p className="text-slate-200">Capitulo No: {store.chapter.order} - </p><p className="text-slate-200">{ store.chapter.title}</p>
+        <p className="text-slate-200">Capitulo No: {store.chapter.order} - {store.chapter.title}</p>
       </div>
 
       <div className="mt-5 mb-5 relative flex w-full h-full items-center justify-center">
