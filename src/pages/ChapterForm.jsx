@@ -14,28 +14,36 @@ export default function ChapterForm() {
     const { manga_id } = useParams()
 
     const chapterCreate = async () => {
-      // try {
+      
+      try {
+
         let data = {
           title: title.current.value,
-          order: order.current.value?.trim(),
+          // order: order.current.value?.trim(),
           pages: pages.current.value.split(','),
           manga_id
         };
-        
+        if (order.current.value) {
+          data.order = order.current.value?.trim()
+        }
         let token = localStorage.getItem('token');
         let headers = { headers: { Authorization: `Bearer ${token}` } };
-        await axios.post(apiURL+'/chapters',data,headers)
-        .then(()=>Swal.fire({
-            icon: 'success',
-            text: 'chapter added!'
-            }))
-        .then(()=>navigate('/'))
-        .catch(err=> {console.log(err.response)
-            Swal.fire({
-            icon: 'error',
-            html: err.response.data?.messages?.map(each=>`<p>${each}</p>`).join('')
-        })})
+        await axios.post(apiURL+"/chapters", data, headers)
+        .then(()=>{
+          Swal.fire({
+            icon:"success",
+            text:"Manga created"
+          })
+          navigate("/")
+          }
+        )
 
+      } catch (error) {
+        Swal.fire({
+          "icon":"error",
+          "html":error.response.data.messages.map(each=>`<p>${each}</p>`).join("")
+        })
+      }
     };
     
   return (
