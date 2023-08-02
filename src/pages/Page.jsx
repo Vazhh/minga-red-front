@@ -17,6 +17,7 @@ export default function Page() {
   let [currentPage, setCurrentPage] = useState(0);
   const navigate = useNavigate();
   let [nextChapter, setNextChapter] = useState("");
+  let [manga,setManga] = useState("")
   let dispatch = useDispatch();
   const { saveData } = chapterActions;
 
@@ -26,6 +27,7 @@ export default function Page() {
         .then((res) => {
           console.log(res);
           setPages(res.data.response.pages);
+          setManga(res.data.response.manga_id);
           setNextChapter(res.data.next);
           dispatch(
             saveData({
@@ -56,7 +58,7 @@ export default function Page() {
   const prev = () =>
     currentPage !== 0
       ? setCurrentPage(currentPage - 1)
-      : setCurrentPage(pages.length - 1);
+      : navigate("/manga/" + manga + "/1");
 
   return (
     <main className="flex flex-col items-center justify-center w-full">
