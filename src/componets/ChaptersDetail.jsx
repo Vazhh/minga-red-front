@@ -44,9 +44,9 @@ export default function ChaptersDetails() {
                 
                 </div>
             ))}
-            <div>
-                {prev&& <div onClick={()=> navigate(`/manga/${manga_id}/${parseInt(page)-1}`) }>prev</div> }
-                {next&& <div onClick={()=> navigate(`/manga/${manga_id}/${parseInt(page)+1}`) }>next</div> }
+            <div className="flex items-center w-16 jutstify-center bg-indigo-600 rounded-2xl text-white p-2  mx-auto ">
+                {prev&& <div className="flex mx-auto " onClick={()=> navigate(`/manga/${manga_id}/${parseInt(page)-1}`) }>prev</div> }
+                {next&& <div className="flex mx-auto " onClick={()=> navigate(`/manga/${manga_id}/${parseInt(page)+1}`) }>next</div> }
             </div>
         </>
     );
