@@ -1,24 +1,20 @@
 import { createReducer } from "@reduxjs/toolkit";
-import authorsAction from "../actions/me_authors";
+import actions from "../actions/me_authors";
 
-const { saveProfile } = authorsAction;
+const { saveProfile } = actions;
 
-const initialState = {
-  profile: [],
+const initial_state = {
+  profile: {},
 };
 
-const authorsReducer = createReducer(
-  initialState,
-  (builder) => builder.addCase(
-    saveProfile,
-    (state, action) => {
-      const newState = {
-        ...state,
-        profile: action.payload.profile,
-      };
-      return newState;
-    }
-  )
+const reducer = createReducer(initial_state, (build) =>
+  build.addCase(saveProfile, (state, action) => {
+    let new_state = {
+      ...state,
+      profile: action.payload.profile,
+    };
+    return new_state;
+  })
 );
 
-export default authorsReducer;
+export default reducer;

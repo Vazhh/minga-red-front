@@ -1,9 +1,10 @@
 import { createAction } from "@reduxjs/toolkit";
 
-const saveProfile = createAction("saveProfile", (obj) => {
+const saveProfile = createAction("saveProfile", (data) => {
+  // console.log(data);
   return {
     payload: {
-      profile: obj.profile,
+      profile: data,
     },
   };
 });
