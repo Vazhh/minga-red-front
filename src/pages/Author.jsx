@@ -6,6 +6,7 @@ import ProfileAuthor from '../componets/ProfileAuthor';
 import SwitchAuthor from '../componets/SwitchAuthor';
 import actions from "../store/actions/me_authors";
 import manga_actions from "../store/actions/mangas_news";
+import Button from '../componets/Button'
 const { saveProfile } = actions;
 const { save_mangas_me } = manga_actions;
 
@@ -38,53 +39,58 @@ export default function AuthorProfile() {
   }, []);
   
   return (
-    <main className="flex flex-col pt-20 w-full md:w-11/12 2xl:w-[1375px] min-h-screen items-center justify-start">
-      <ProfileAuthor
-        photo={profile?.photo}
-        name={profile?.name}
-        last_name={profile?.last_name}
-        city={profile?.city}
-        country={profile?.country}
-        date={profile?.date}
-      />
-			<div className="flex-grow flex flex-col justify-center items-center pt-4">
-				{logo ? (
-					<>
-						<img src={logo} className="w-[150px] h-[150px] " />
-						<span className="text-[18px] mt-4 bg-amber-200 p-2">You don't have mangas, please create a new one to read!</span>
-					</>
+<main className="flex flex-col pt-20 w-full  md:w-11/12 2xl:w-[1375px] min-h-screen items-center justify-start ">
+	
+	<ProfileAuthor
+	photo={profile?.photo}
+	name={profile?.name}
+	last_name={profile?.last_name}
+	city={profile?.city}
+	country={profile?.country}
+	date={profile?.date}
+	/>
+	
+		<div className="flex flex-col justify-center items-center pt-4 border-t-4 border-indigo-500">
+		{/* <div className="w-[420px] h-[px] top-[230px] absolute border border-[#4338CA]"></div> */}
+			{logo ? (
+				<>
+					<img src={logo} className="w-[150px] h-[150px] " />
+					<span className="text-[18px] mt-4 bg-amber-200 p-2">You don't have mangas, please create a new one to read!</span>
+				</>
+			) : (
+				all.length>0 ? (
+					<SwitchAuthor mangas={all} />
 				) : (
-					all.length>0 ? (
-						<SwitchAuthor mangas={all} />
-					) : (
-						<>
-							<div className="flex">
-								<span>news</span>
-								<div onClick={()=>setShowNews(!showNews)} className="flex justify-between items-center w-[48px] h-[24px] rounded-full bg-[#12B28C] mx-3">
-									{showNews ? (
-										<>
-											<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-white" />
-											<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-[#12B28C]" />
-										</>
-									) : (
-										<>
-											<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-[#12B28C]" />
-											<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-white" />
-										</>
-									)}
-								</div>
-								<span>olds</span>
+					<>
+						<div className="flex mb-2">
+							<span>news</span>
+							<div onClick={()=>setShowNews(!showNews)} className="flex justify-between items-center w-[48px] h-[24px] rounded-full bg-[#12B28C] mx-3">
+								{showNews ? (
+									<>
+										<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-white" />
+										<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-[#12B28C]" />
+									</>
+								) : (
+									<>
+										<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-[#12B28C]" />
+										<span className="w-[20px] h-[20px] mx-[1px] rounded-full bg-white" />
+									</>
+								)}
 							</div>
-							{showNews ? (
-								<SwitchAuthor mangas={news} />
-							) : (
-								<SwitchAuthor mangas={olds} />
-							)}
-						</>
-					)
-				)}
-			</div>
-    </main>
+							<span>olds</span>
+						</div>
+						{showNews ? (
+							<SwitchAuthor mangas={news} />
+						) : (
+							<SwitchAuthor mangas={olds} />
+						)}
+						<Button value='Manage' />
+					</>
+				)
+			)}
+			
+		</div>
+</main>
   );
 }
 
