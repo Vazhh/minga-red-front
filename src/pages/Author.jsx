@@ -16,7 +16,7 @@ export default function AuthorProfile() {
   const all = useSelector((store) => store.mangasnews.all);
   const news = useSelector((store) => store.mangasnews.news);
   const olds = useSelector((store) => store.mangasnews.olds);
-const [showNews,setShowNews] = useState(true)
+  const [showNews,setShowNews] = useState(true)
 
   let token = localStorage.getItem('token');
   let headers = { headers: { Authorization: `Bearer ${token}` } };
@@ -36,7 +36,7 @@ const [showNews,setShowNews] = useState(true)
       .catch((err) => console.log(err));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return (
     <main className="flex flex-col pt-20 w-full md:w-11/12 2xl:w-[1375px] min-h-screen items-center justify-start">
       <ProfileAuthor
@@ -50,8 +50,8 @@ const [showNews,setShowNews] = useState(true)
 			<div className="flex-grow flex flex-col justify-center items-center pt-4">
 				{logo ? (
 					<>
-						<img src={apiUrl+logo} className="w-[300px] h-[300px]" />
-						<span className="text-[18px] mt-4">You don't have mangas, please create a new one to read!</span>
+						<img src={logo} className="w-[150px] h-[150px] " />
+						<span className="text-[18px] mt-4 bg-amber-200 p-2">You don't have mangas, please create a new one to read!</span>
 					</>
 				) : (
 					all.length>0 ? (
