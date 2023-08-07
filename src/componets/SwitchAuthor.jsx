@@ -9,7 +9,7 @@ export default function SwitchAuthor({ mangas }) {
       ];
     }
     return (
-      <article className="w-full p-4">
+      <article className="w-full">
         {data.map((each, index) => {
           return (
             <section

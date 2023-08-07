@@ -52,15 +52,15 @@ export default function MangaDetail() {
         }
     }, [show])
     return (
-        <main className="  pb-[10%] bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
-            <main className="   bg-[#EBEBEB] p-4 flex flex-col  w-screen h-full" >
+        <main className="pb-[10%] bg-[#EBEBEB] p-4 flex flex-col w-full h-full" >
+            <main className="bg-[#EBEBEB] p-4 flex flex-col w-full h-full" >
                 <img className='px- flex items-center mx-auto mt-20 object-cover h-[400px] w-[400px]   ' src={manga.cover_photo} alt="imagen" />
 
                 {title ? <TitleManga /> : <TitleChapter />}
                 <div className='flex justify-between items-center mt-10 mx-auto w-[390px] h-[45px]  border-2 rounded-2xl shadow-[0px_0px_7px_0px_rgba(0,0,0,0.15)] '>
 
-                    <input type="button" value="Manga" onClick={() => { setShow(!show), setTitle(!title) }} className='flex items-center justify-center  w-[50%] h-full rounded-2xl text-[#9D9D9D] ' style={{ backgroundColor: mangaStyle.backgroundColor, color: mangaStyle.color }} />
-                    < input type="button" value="Chapter" onClick={() => { setShow(!show), setTitle(!title) }}  className='flex items-center justify-center bg-#9D9D9D w-[50%] h-full rounded-2xl text-[#9D9D9D] ' style={{ backgroundColor: chapterStyle.backgroundColor, color: chapterStyle.color }} />
+                    <input type="button" value="Manga" onClick={() => { setShow(!show), setTitle(!title) }} className='flex items-center justify-center  w-[50%] h-full rounded-2xl text-[#9D9D9D] cursor-pointer hover:shadow-md' style={{ backgroundColor: mangaStyle.backgroundColor, color: mangaStyle.color }} />
+                    <input type="button" value="Chapter" onClick={() => { setShow(!show), setTitle(!title) }}  className='flex items-center justify-center bg-#9D9D9D w-[50%] h-full rounded-2xl text-[#9D9D9D] cursor-pointer hover:shadow-md' style={{ backgroundColor: chapterStyle.backgroundColor, color: chapterStyle.color }} />
                 </div>
 
                 {show ? <MangaDetails /> : <ChaptersDetails />}
