@@ -47,11 +47,11 @@ export default function AuthorProfile() {
 	last_name={profile?.last_name}
 	city={profile?.city}
 	country={profile?.country}
-	date={profile?.date}
+	date={profile?.updatedAt}
 	/>
 	
 		<div className="flex flex-col justify-center items-center pt-4 border-t-4 border-indigo-500">
-		{/* <div className="w-[420px] h-[px] top-[230px] absolute border border-[#4338CA]"></div> */}
+
 			{logo ? (
 				<>
 					<img src={logo} className="w-[150px] h-[150px] " />
@@ -77,7 +77,7 @@ export default function AuthorProfile() {
 									</>
 								)}
 							</div>
-							<span>olds</span>
+							<span>old</span>
 						</div>
 						{showNews ? (
 							<SwitchAuthor mangas={news} />
