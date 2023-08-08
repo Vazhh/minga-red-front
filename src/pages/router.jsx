@@ -11,6 +11,7 @@ import NotAllowed from "./NotAllowed";
 import MangaDetail from "./MangaDetail";
 import Page from "./Page";
 import Author from './Author'
+import Mangas from "./Mangas";
 
 const router = createBrowserRouter([
   // necesita que le pasemos un array de objetos, cada objeto tendra la propiedad PATH con la ruta ELEMENT con el elemento que renderiza esa PATH
@@ -63,7 +64,14 @@ const router = createBrowserRouter([
         }
       , element: <Page /> },
       { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
-      { path: "/manga/:manga_id/:page", element: <MangaDetail /> },
+      {
+        path: "/mangas/:page",
+        element: <Mangas />,
+        loader: ()=> {
+          let user = JSON.parse(localStorage.getItem('user'))
+          return (!user)&&redirect('/not-allowed')
+        }
+      },
       { path: "/me",loader:()=>{
         let user = JSON.parse(localStorage.getItem('user'))
         return ( !user || user.role !== 1 )&&redirect('/not-allowed')
