@@ -40,29 +40,26 @@ export default function NavBar() {
       if (user.role === 0) {
         setOptions([
           { to: "/", title: "Home" },
+          { to: "/mangas/1", title: "Mangas" },
           { to: "/author-form", title: "Create Author" },
           { to: "/cia-form", title: "Create company" },
-          { to: "/manga/64643b7ed1c6159992895e1e/1", title: "Read Manga-detail" },
-          { to: "/chapter/64643b7cd1c6159992895e0c/1", title: "Read Chapter"},
           { to: "/", title: "Sign Out" },
           
         ]);
       }else if(user.role===1||user.role===2){
         setOptions([
           { to: "/", title: "Home" },
+          { to: "/mangas/1", title: "Mangas" },
           { to: "/manga-form", title: "Create Manga" },
           { to: "/:manga_id/chapther-form", title: "Create Chapter" },
           { to: "/me", title: "Profile" },
-          { to: "/manga/64643b7ed1c6159992895e1e/1", title: "Read Manga-detail" },
-          { to: "/chapter/64643b7cd1c6159992895e0c/1", title: "Read Chapter"},
           { to: "/", title: "Sign Out" },
           
         ]);
       }else if(user.role===3){
         setOptions([
-          { to: "/", title: "Home" }, 
-          { to: "/manga/64643b7ed1c6159992895e1e/1", title: "Read Manga-detail" },
-          { to: "/chapter/64643b7cd1c6159992895e0c/1", title: "Read Chapter"},
+          { to: "/", title: "Home" },
+          { to: "/mangas/1", title: "Mangas" },
           { to: "/", title: "Sign Out" },
          
         ]);
